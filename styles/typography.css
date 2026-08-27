@@ -1,0 +1,123 @@
+/* ==========================================================================
+   VANTARA WORKFORCE SOLUTIONS | TYPOGRAPHY
+   ========================================================================== */
+
+body {
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  line-height: var(--lh-body);
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6,
+.font-display {
+  font-family: var(--font-display);
+  font-weight: var(--fw-normal);
+  color: var(--text-primary);
+  letter-spacing: var(--letter-tight);
+}
+
+.display-hero {
+  font-family: var(--font-display);
+  font-size: clamp(2.75rem, 6.5vw, 6.25rem);
+  line-height: var(--lh-tight);
+  font-weight: 400;
+  letter-spacing: -0.03em;
+}
+
+.display-hero em,
+.display-1 em,
+.display-2 em {
+  font-style: italic;
+  font-weight: 300;
+  font-family: var(--font-display);
+}
+
+.display-1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 4.5rem);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+}
+
+.display-2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.85rem, 3.8vw, 3.25rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+
+.display-3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 2.5vw, 2.25rem);
+  line-height: var(--lh-heading);
+}
+
+.label-editorial {
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: var(--fw-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-editorial);
+  color: var(--brand-forest);
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.label-editorial::before {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 1px;
+  background-color: currentColor;
+}
+
+.label-editorial.label-neutral {
+  color: var(--text-muted);
+}
+
+.lead-text {
+  font-size: clamp(1.1875rem, 1.6vw, 1.45rem);
+  line-height: 1.55;
+  color: var(--text-secondary);
+  font-weight: var(--fw-normal);
+}
+
+.sub-lead {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.caption {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.editorial-quote {
+  font-family: var(--font-display);
+  font-size: clamp(1.65rem, 3.2vw, 2.75rem);
+  line-height: 1.28;
+  color: var(--brand-forest-deep);
+  border-left: 2px solid var(--brand-forest);
+  padding-left: clamp(1.25rem, 3vw, 2.5rem);
+  margin: var(--space-8) 0;
+}
+
+.editorial-quote cite {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--letter-editorial);
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-style: normal;
+  margin-top: var(--space-4);
+}

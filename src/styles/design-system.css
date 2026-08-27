@@ -1,0 +1,170 @@
+/* ==========================================================================
+   VANTARA WORKFORCE SOLUTIONS | DESIGN SYSTEM INSPECTOR & SPEC DRAWER
+   Interactive developer & stakeholder design system preview tool
+   ========================================================================== */
+
+/* Hidden by default in production and public interface */
+.ds-inspector-toggle {
+  display: none;
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 999;
+  background-color: var(--brand-forest-deep);
+  color: var(--text-inverse);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  font-size: 0.75rem;
+  font-weight: var(--fw-semibold);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: var(--shadow-lg);
+  cursor: pointer;
+  align-items: center;
+  gap: var(--space-2);
+  transition: all var(--duration-fast);
+}
+
+.ds-inspector-toggle.is-active {
+  display: flex;
+}
+
+.ds-inspector-toggle:hover {
+  background-color: var(--brand-forest-hover);
+  transform: translateY(-2px);
+}
+
+.ds-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-6);
+}
+
+.ds-modal.is-open {
+  display: flex;
+}
+
+.ds-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(14, 39, 27, 0.6);
+  backdrop-filter: blur(8px);
+}
+
+.ds-modal-card {
+  position: relative;
+  width: 100%;
+  max-width: 1080px;
+  max-height: 88vh;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-warm);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-warm-float);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  z-index: 10;
+}
+
+.ds-modal-header {
+  padding: var(--space-6) var(--space-8);
+  background-color: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-warm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ds-modal-title {
+  font-family: var(--font-display);
+  font-size: 1.65rem;
+  margin: 0;
+  color: var(--brand-forest-deep);
+}
+
+.ds-modal-subtitle {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-editorial);
+  margin-top: 4px;
+}
+
+.ds-modal-close {
+  background: transparent;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--text-secondary);
+  padding: var(--space-1);
+}
+
+.ds-modal-body {
+  padding: var(--space-8);
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-10);
+}
+
+/* Color Swatches Grid */
+.ds-color-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: var(--space-4);
+}
+
+.ds-swatch {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  background-color: var(--bg-elevated);
+}
+
+.ds-swatch-color {
+  height: 72px;
+  width: 100%;
+}
+
+.ds-swatch-info {
+  padding: var(--space-3);
+}
+
+.ds-swatch-name {
+  font-size: 0.8125rem;
+  font-weight: var(--fw-semibold);
+  color: var(--text-primary);
+}
+
+.ds-swatch-hex {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.ds-swatch-role {
+  font-size: 0.6875rem;
+  color: var(--brand-forest);
+  margin-top: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Section inside inspector */
+.ds-section-title {
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--letter-editorial);
+  text-transform: uppercase;
+  color: var(--brand-forest-deep);
+  border-bottom: 1px solid var(--border-warm);
+  padding-bottom: var(--space-2);
+  margin-bottom: var(--space-4);
+}
