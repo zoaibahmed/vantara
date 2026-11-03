@@ -64,7 +64,7 @@ export default function AboutPage() {
           <div className="page-hero-grid">
             <div>
               <span className="label-editorial">Brand Philosophy & Governance</span>
-              <h1 className="display-hero" style={{ margin: 'var(--space-4) 0 var(--space-6)', textTransform: 'uppercase' }}>
+              <h1 className="display-hero" style={{ margin: 'var(--space-4) 0 var(--space-6)' }}>
                 We Believe International<br />
                 <em>Workforce Should Be Simpler.</em>
               </h1>
@@ -102,7 +102,7 @@ export default function AboutPage() {
       <section className="section-spacing bg-secondary">
         <div className="container-editorial">
           <span className="label-editorial">The Vantara Story</span>
-          <h2 className="display-2" style={{ margin: 'var(--space-3) 0 var(--space-4)', textTransform: 'uppercase' }}>
+          <h2 className="display-2" style={{ margin: 'var(--space-3) 0 var(--space-4)' }}>
             Built For Hospitality Operators.
           </h2>
           <p className="lead-text" style={{ marginBottom: 'var(--space-4)' }}>
@@ -123,7 +123,7 @@ export default function AboutPage() {
 
           <div className="max-w-editorial" style={{ marginBottom: 'var(--space-10)' }}>
             <span className="label-editorial">Guiding Principles</span>
-            <h2 className="display-2" style={{ marginTop: 'var(--space-2)', textTransform: 'uppercase' }}>
+            <h2 className="display-2" style={{ marginTop: 'var(--space-2)' }}>
               Four Pillars of Trust.
             </h2>
             <p className="lead-text">
@@ -155,7 +155,7 @@ export default function AboutPage() {
       <section className="section-spacing bg-secondary">
         <div className="container-editorial">
           <span className="label-editorial">Corporate Governance</span>
-          <h2 className="display-2" style={{ margin: 'var(--space-3) 0 var(--space-4)', textTransform: 'uppercase' }}>
+          <h2 className="display-2" style={{ margin: 'var(--space-3) 0 var(--space-4)' }}>
             A Venture of Ascentra Global Ltd.
           </h2>
           <p className="lead-text" style={{ marginBottom: 'var(--space-6)' }}>
@@ -175,7 +175,7 @@ export default function AboutPage() {
         <div className="container">
           <div className="max-w-editorial" style={{ marginBottom: 'var(--space-8)' }}>
             <span className="label-editorial">Core Values</span>
-            <h2 className="display-2" style={{ marginTop: 'var(--space-2)', textTransform: 'uppercase' }}>
+            <h2 className="display-2" style={{ marginTop: 'var(--space-2)' }}>
               How We Operate.
             </h2>
           </div>
@@ -200,7 +200,7 @@ export default function AboutPage() {
       <section className="climax-statement-section">
         <div className="container-editorial">
           <span className="label-editorial" style={{ color: 'var(--champagne)' }}>Executive Leadership</span>
-          <h2 style={{ textTransform: 'uppercase' }}>Connect With Our Leadership.</h2>
+          <h2 style={{ textTransform: 'none' }}>Connect With Our Leadership.</h2>
           <p>Learn how Vantara can become your trusted workforce coordination partner.</p>
           <Link href="/contact" className="btn btn-inverse-primary btn-lg">
             <span>Request Consultation</span>

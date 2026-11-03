@@ -7,7 +7,7 @@ import { motion } from 'framer-motion';
 
 export default function HeroScene() {
   return (
-    <section className="hero-editorial scene-container" id="hero">
+    <section className="hero-editorial scene-container home-hero" id="hero">
       <div className="container-wide">
         <div className="hero-grid">
           
@@ -18,12 +18,12 @@ export default function HeroScene() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="label-editorial">B2B International Hospitality Workforce</span>
+            <span className="label-editorial">International hospitality workforce</span>
             
-            <h1 className="display-hero" style={{ margin: 'var(--space-4) 0 var(--space-5)', textTransform: 'uppercase' }}>
+            <h1 className="display-hero" style={{ margin: 'var(--space-4) 0 var(--space-5)' }}>
               Your Hospitality<br />
               Workforce.<br />
-              <em>Coordinated.</em>
+              Coordinated.
             </h1>
             
             <p className="lead-text max-w-prose" style={{ marginBottom: 'var(--space-8)' }}>
@@ -67,7 +67,7 @@ export default function HeroScene() {
               className="hero-image"
             />
             <div className="hero-media-caption">
-              <span>Hospitality Workforce Coordination • Ready For Deployment</span>
+              <span>The people behind exceptional hospitality.</span>
             </div>
           </motion.div>
 

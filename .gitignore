@@ -30,3 +30,7 @@ Thumbs.db
 # TypeScript cache
 *.tsbuildinfo
 next-env.d.ts
+
+# Isolated visual QA and production verification
+.next-preview/
+.next-build/

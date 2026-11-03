@@ -2,15 +2,16 @@
 
 import React, { useEffect, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion, AnimatePresence, useReducedMotion } from 'framer-motion';
 
 export default function PageTransition({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const reducedMotion = useReducedMotion();
   const [isNavigating, setIsNavigating] = useState(false);
 
   useEffect(() => {
     // Scroll to top on route change smoothly
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    if (!window.location.hash) window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     setIsNavigating(true);
     const timer = setTimeout(() => setIsNavigating(false), 500);
     return () => clearTimeout(timer);
@@ -26,7 +27,7 @@ export default function PageTransition({ children }: { children: React.ReactNode
             initial={{ scaleX: 0, opacity: 0.8 }}
             animate={{ scaleX: 1, opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: reducedMotion ? 0 : 0.25, ease: [0.22, 1, 0.36, 1] }}
           />
         )}
       </AnimatePresence>
@@ -35,9 +36,9 @@ export default function PageTransition({ children }: { children: React.ReactNode
       <AnimatePresence mode="wait">
         <motion.div
           key={pathname}
-          initial={{ opacity: 0, y: 14 }}
+          initial={false}
           animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: -10 }}
+          exit={{ opacity: 0, y: reducedMotion ? 0 : -6 }}
           transition={{
             duration: 0.45,
             ease: [0.22, 1, 0.36, 1]

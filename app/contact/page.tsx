@@ -33,7 +33,7 @@ export default function ContactPage() {
           <div className="page-hero-grid">
             <div>
               <span className="label-editorial">Employer Consultation Portal</span>
-              <h1 className="display-hero" style={{ margin: 'var(--space-4) 0 var(--space-6)', textTransform: 'uppercase' }}>
+              <h1 className="display-hero" style={{ margin: 'var(--space-4) 0 var(--space-6)' }}>
                 Tell Us What<br />
                 <em>Your Operation Needs.</em>
               </h1>
@@ -48,7 +48,7 @@ export default function ContactPage() {
             </div>
             <div className="page-hero-media">
               <Image
-                src="https://img.magnific.com/free-photo/hotel-manager-handing-arriving-visitors-booking-reservation-file-receptionists-check-business-travelling-guests-being-assisted-by-helpful-concierge-staff-coworkers-inside-reception-lobby_482257-72475.jpg?semt=ais_test_b&w=740&q=80"
+                src="/images/custom/corridor-reception.jpg"
                 alt="Hospitality front office team welcoming guests warmly"
                 fill
                 priority

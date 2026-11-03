@@ -108,7 +108,7 @@ export default function DestinationsPage() {
           <div className="page-hero-grid">
             <div>
               <span className="label-editorial">Tourism-Dependent Markets</span>
-              <h1 className="display-hero" style={{ margin: 'var(--space-4) 0 var(--space-6)', textTransform: 'uppercase' }}>
+              <h1 className="display-hero" style={{ margin: 'var(--space-4) 0 var(--space-6)' }}>
                 Where Hospitality<br />
                 <em>Needs Working People.</em>
               </h1>
@@ -148,7 +148,7 @@ export default function DestinationsPage() {
 
           <div className="max-w-editorial" style={{ marginBottom: 'var(--space-10)' }}>
             <span className="label-editorial">Destination Hubs</span>
-            <h2 className="display-2" style={{ marginTop: 'var(--space-2)', textTransform: 'uppercase' }}>
+            <h2 className="display-2" style={{ marginTop: 'var(--space-2)' }}>
               Staffed Focus & Expansion Corridors.
             </h2>
             <p className="lead-text">
@@ -184,7 +184,7 @@ export default function DestinationsPage() {
                   </p>
                   <p style={{ marginBottom: 'var(--space-4)' }}>{dest.overview}</p>
 
-                  <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '0.8125rem', fontWeight: 'var(--fw-bold)', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--brand-forest-deep)', marginBottom: 'var(--space-2)' }}>
+                  <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '0.8125rem', fontWeight: 'var(--fw-bold)', letterSpacing: '0.08em', color: 'var(--brand-forest-deep)', marginBottom: 'var(--space-2)' }}>
                     Regulatory & Operational Considerations:
                   </h4>
                   <ul style={{ paddingLeft: 'var(--space-5)', margin: '0 0 var(--space-4) 0', display: 'flex', flexDirection: 'column', gap: '4px' }}>
@@ -193,7 +193,7 @@ export default function DestinationsPage() {
                     ))}
                   </ul>
 
-                  <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '0.8125rem', fontWeight: 'var(--fw-bold)', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--brand-forest-deep)', marginBottom: 'var(--space-2)' }}>
+                  <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '0.8125rem', fontWeight: 'var(--fw-bold)', letterSpacing: '0.08em', color: 'var(--brand-forest-deep)', marginBottom: 'var(--space-2)' }}>
                     High-Demand Roles:
                   </h4>
                   <div className="role-tags-list">
@@ -214,7 +214,7 @@ export default function DestinationsPage() {
         <div className="container">
           <div className="max-w-editorial" style={{ marginBottom: 'var(--space-8)' }}>
             <span className="label-editorial">Operational Problem Solving</span>
-            <h2 className="display-2" style={{ marginTop: 'var(--space-2)', textTransform: 'uppercase' }}>
+            <h2 className="display-2" style={{ marginTop: 'var(--space-2)' }}>
               Solving Destination Staffing Friction.
             </h2>
             <p className="lead-text">
@@ -244,7 +244,7 @@ export default function DestinationsPage() {
       <section className="climax-statement-section">
         <div className="container-editorial">
           <span className="label-editorial" style={{ color: 'var(--champagne)' }}>Destination Consultation</span>
-          <h2 style={{ textTransform: 'uppercase' }}>Operating in a Tourism Hub?</h2>
+          <h2 style={{ textTransform: 'none' }}>Operating in a Tourism Hub?</h2>
           <p>Contact Vantara to discuss international workforce deployment for your specific island or coastal destination.</p>
           <Link href="/contact" className="btn btn-inverse-primary btn-lg">
             <span>Request Workforce Consultation</span>

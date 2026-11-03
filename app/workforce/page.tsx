@@ -90,7 +90,7 @@ export default function WorkforcePage() {
           <div className="page-hero-grid">
             <div>
               <span className="label-editorial">International Talent Corridors</span>
-              <h1 className="display-hero" style={{ margin: 'var(--space-4) 0 var(--space-6)', textTransform: 'uppercase' }}>
+              <h1 className="display-hero" style={{ margin: 'var(--space-4) 0 var(--space-6)' }}>
                 International<br />
                 <em>Hospitality Talent.</em>
               </h1>
@@ -130,7 +130,7 @@ export default function WorkforcePage() {
 
           <div className="max-w-editorial" style={{ marginBottom: 'var(--space-10)' }}>
             <span className="label-editorial">Origin Markets</span>
-            <h2 className="display-2" style={{ marginTop: 'var(--space-2)', textTransform: 'uppercase' }}>
+            <h2 className="display-2" style={{ marginTop: 'var(--space-2)' }}>
               Established Talent Corridors.
             </h2>
             <p className="lead-text">
@@ -166,7 +166,7 @@ export default function WorkforcePage() {
                   </p>
                   <p style={{ marginBottom: 'var(--space-4)' }}>{corridor.overview}</p>
 
-                  <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '0.8125rem', fontWeight: 'var(--fw-bold)', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--brand-forest-deep)', marginBottom: 'var(--space-2)' }}>
+                  <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '0.8125rem', fontWeight: 'var(--fw-bold)', letterSpacing: '0.08em', color: 'var(--brand-forest-deep)', marginBottom: 'var(--space-2)' }}>
                     Core Strengths:
                   </h4>
                   <ul style={{ paddingLeft: 'var(--space-5)', margin: '0 0 var(--space-4) 0', display: 'flex', flexDirection: 'column', gap: '4px' }}>
@@ -193,7 +193,7 @@ export default function WorkforcePage() {
         <div className="container">
           <div className="max-w-editorial" style={{ marginBottom: 'var(--space-8)' }}>
             <span className="label-editorial">Vetting Standard</span>
-            <h2 className="display-2" style={{ marginTop: 'var(--space-2)', textTransform: 'uppercase' }}>
+            <h2 className="display-2" style={{ marginTop: 'var(--space-2)' }}>
               The 4-Tier Candidate Screening Framework.
             </h2>
             <p className="lead-text">
@@ -221,7 +221,7 @@ export default function WorkforcePage() {
       <section className="section-spacing bg-primary">
         <div className="container-editorial">
           <span className="label-editorial">Social Responsibility</span>
-          <h2 className="display-2" style={{ margin: 'var(--space-2) 0 var(--space-4)', textTransform: 'uppercase' }}>
+          <h2 className="display-2" style={{ margin: 'var(--space-2) 0 var(--space-4)' }}>
             Our Ethical Recruitment Charter.
           </h2>
           <p className="lead-text" style={{ marginBottom: 'var(--space-6)' }}>
@@ -241,7 +241,7 @@ export default function WorkforcePage() {
         <div className="container-editorial">
           <div className="max-w-editorial">
             <span className="label-editorial">Candidate Registration</span>
-            <h2 className="display-1" style={{ margin: 'var(--space-2) 0 var(--space-3)', textTransform: 'uppercase' }}>
+            <h2 className="display-1" style={{ margin: 'var(--space-2) 0 var(--space-3)' }}>
               Are You A Hospitality<br />Professional?
             </h2>
             <p className="lead-text">

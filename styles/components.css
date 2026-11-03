@@ -97,11 +97,7 @@
   opacity: 0;
 }
 
-@media (pointer: fine) and (hover: hover) {
-  body, a, button, input, select, textarea, [role="button"], .btn {
-    cursor: none !important;
-  }
-}
+
 
 @media (pointer: coarse), (hover: none) {
   .custom-cursor-root {

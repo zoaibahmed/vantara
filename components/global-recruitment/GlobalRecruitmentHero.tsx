@@ -39,7 +39,7 @@ export default function GlobalRecruitmentHero() {
               className="display-hero"
               style={{
                 margin: 'var(--space-4) 0 var(--space-5)',
-                textTransform: 'uppercase'
+                textTransform: 'none'
               }}
             >
               GLOBAL TALENT.<br />
@@ -83,7 +83,7 @@ export default function GlobalRecruitmentHero() {
                 style={{
                   fontSize: '0.75rem',
                   letterSpacing: '0.12em',
-                  textTransform: 'uppercase',
+                  textTransform: 'none',
                   color: 'var(--text-muted)',
                   fontWeight: 'var(--fw-semibold)'
                 }}
@@ -168,7 +168,7 @@ export default function GlobalRecruitmentHero() {
                     color: 'var(--champagne)',
                     fontSize: '0.75rem',
                     letterSpacing: '0.08em',
-                    textTransform: 'uppercase',
+                    textTransform: 'none',
                     marginBottom: 'var(--space-2)'
                   }}
                 >

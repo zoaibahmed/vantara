@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { submitCandidateApplication } from '@/services/candidateApplication';
 
 interface WorkerModalProps {
@@ -9,6 +9,7 @@ interface WorkerModalProps {
 }
 
 export default function WorkerModal({ isOpen, onClose }: WorkerModalProps) {
+  const modalRef = useRef<HTMLDivElement>(null);
   const [formData, setFormData] = useState({
     fullName: '',
     country: '',
@@ -24,20 +25,29 @@ export default function WorkerModal({ isOpen, onClose }: WorkerModalProps) {
   const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
 
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = '';
-      setFeedback(null);
-      setIsSuccess(null);
-    }
-    const handleKeyDown = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && isOpen) onClose();
+    if (!isOpen) { setFeedback(null); setIsSuccess(null); return; }
+    const previousFocus = document.activeElement as HTMLElement | null;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const background = Array.from(document.querySelectorAll<HTMLElement>('#siteHeader, .site-footer, .page-transition-wrapper'));
+    const inertStates = background.map(element => element.inert);
+    background.forEach(element => { element.inert = true; });
+    modalRef.current?.querySelector<HTMLButtonElement>('.modal-close-btn')?.focus();
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose();
+      if (event.key !== 'Tab') return;
+      const controls = modalRef.current?.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex="0"]');
+      if (!controls?.length) return;
+      const first = controls[0], last = controls[controls.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first.focus(); }
     };
     window.addEventListener('keydown', handleKeyDown);
     return () => {
-      document.body.style.overflow = '';
+      document.body.style.overflow = previousOverflow;
+      background.forEach((element, index) => { element.inert = inertStates[index]; });
       window.removeEventListener('keydown', handleKeyDown);
+      previousFocus?.focus();
     };
   }, [isOpen, onClose]);
 
@@ -65,12 +75,12 @@ export default function WorkerModal({ isOpen, onClose }: WorkerModalProps) {
   };
 
   return (
-    <div className="worker-modal-container" role="dialog" aria-modal="true" aria-labelledby="workerModalHeading">
+    <div ref={modalRef} className="worker-modal-container" role="dialog" aria-modal="true" aria-labelledby="workerModalHeading">
       {/* Dark Frosted Backdrop */}
       <div className="worker-modal-backdrop" onClick={onClose} aria-hidden="true" />
       
       {/* Solid Elevated Dialog Card */}
-      <div className="worker-modal-card">
+      <div className="worker-modal-card" data-lenis-prevent>
         <div className="modal-card-header">
           <div>
             <span className="label-editorial" style={{ margin: 0, color: 'var(--brand-forest)' }}>Candidate Registration</span>

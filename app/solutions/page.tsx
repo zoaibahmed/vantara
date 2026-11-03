@@ -108,7 +108,7 @@ export default function SolutionsPage() {
           <div className="page-hero-grid">
             <div>
               <span className="label-editorial">Operational Scope</span>
-              <h1 className="display-hero" style={{ margin: 'var(--space-4) 0 var(--space-6)', textTransform: 'uppercase' }}>
+              <h1 className="display-hero" style={{ margin: 'var(--space-4) 0 var(--space-6)' }}>
                 Hospitality Workforce,<br />
                 <em>Built Around Your Operation.</em>
               </h1>
@@ -148,7 +148,7 @@ export default function SolutionsPage() {
           
           <div className="max-w-editorial" style={{ marginBottom: 'var(--space-10)' }}>
             <span className="label-editorial">Departmental Coverage</span>
-            <h2 className="display-2" style={{ marginTop: 'var(--space-2)', textTransform: 'uppercase' }}>
+            <h2 className="display-2" style={{ marginTop: 'var(--space-2)' }}>
               Four Core Operational Pillars.
             </h2>
             <p className="lead-text">
@@ -184,7 +184,7 @@ export default function SolutionsPage() {
                   </p>
                   <p style={{ marginBottom: 'var(--space-6)' }}>{sector.desc}</p>
 
-                  <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '0.8125rem', fontWeight: 'var(--fw-bold)', textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--brand-forest-deep)', marginBottom: 'var(--space-3)' }}>
+                  <h4 style={{ fontFamily: 'var(--font-sans)', fontSize: '0.8125rem', fontWeight: 'var(--fw-bold)', letterSpacing: '0.08em', color: 'var(--brand-forest-deep)', marginBottom: 'var(--space-3)' }}>
                     Specialized Roles Coordinated:
                   </h4>
                   <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: 'var(--space-3)' }}>
@@ -208,7 +208,7 @@ export default function SolutionsPage() {
         <div className="container">
           <div className="max-w-editorial" style={{ marginBottom: 'var(--space-8)' }}>
             <span className="label-editorial">Quality Assurance</span>
-            <h2 className="display-2" style={{ marginTop: 'var(--space-2)', textTransform: 'uppercase' }}>
+            <h2 className="display-2" style={{ marginTop: 'var(--space-2)' }}>
               The Vantara Readiness Standard.
             </h2>
             <p className="lead-text">
@@ -236,7 +236,7 @@ export default function SolutionsPage() {
       <section className="climax-statement-section">
         <div className="container-editorial">
           <span className="label-editorial" style={{ color: 'var(--champagne)' }}>Direct Consultation</span>
-          <h2 style={{ textTransform: 'uppercase' }}>Ready to Coordinate Your Team?</h2>
+          <h2 style={{ textTransform: 'none' }}>Ready to Coordinate Your Team?</h2>
           <p>Tell us your property requirements, department headcounts, and start timeline. We will prepare an end-to-end workforce deployment overview.</p>
           <Link href="/contact" className="btn btn-inverse-primary btn-lg">
             <span>Request Workforce</span>

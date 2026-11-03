@@ -1,84 +1,57 @@
 'use client';
-
-import React from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
+import Brand from '@/components/navigation/Brand';
+import { navigationLinks } from '@/lib/navigation';
 
-interface FooterProps {
-  onOpenWorkerModal?: () => void;
-}
-
-export default function Footer({ onOpenWorkerModal }: FooterProps) {
+export default function Footer({ onOpenWorkerModal }: { onOpenWorkerModal?: () => void }) {
   return (
     <footer className="site-footer">
-      <div className="container">
-        
+      <div className="container-wide">
+        <div className="footer-invitation">
+          <div className="footer-invitation-copy">
+            <span className="footer-kicker">People make the difference.</span>
+            <h2>Exceptional hospitality<br />begins with your people.</h2>
+            <Link href="/contact" className="footer-consultation"><span>Let’s build your workforce</span><span aria-hidden="true">↗</span></Link>
+          </div>
+          <figure className="footer-portrait">
+            <Image src="/images/custom/corridor-fb.jpg" alt="Food and beverage professionals in uniform" fill sizes="(max-width: 700px) 100vw, 30vw" />
+            <figcaption>The people behind the standard.</figcaption>
+          </figure>
+        </div>
         <div className="footer-top-grid">
-          
-          {/* Brand Lockup */}
           <div className="footer-brand-col">
-            <div className="footer-brand-title">Vantara</div>
-            <div className="footer-parent-tag">A venture of <strong>Ascentra Global Ltd</strong></div>
-            <p className="footer-tagline">
-              Your Hospitality Workforce. Coordinated. Professional international workforce sourcing and deployment for premier resort destinations.
-            </p>
+            <Brand />
+            <p className="footer-parent-tag">A venture of <strong>Ascentra Global Ltd</strong></p>
+            <p className="footer-tagline">International hospitality workforce sourcing and deployment, thoughtfully coordinated.</p>
           </div>
-
-          {/* Explore Navigation */}
+          <nav aria-label="Footer navigation">
+            <h3 className="footer-col-title">Explore</h3>
+            <ul className="footer-links">{navigationLinks.map(link => <li key={link.href}><Link href={link.href} className="footer-link">{link.label}</Link></li>)}</ul>
+          </nav>
           <div>
-            <h4 className="footer-col-title">Explore</h4>
-            <ul className="footer-links">
-              <li><Link href="/solutions" className="footer-link">Solutions</Link></li>
-              <li><Link href="/workforce" className="footer-link">Workforce</Link></li>
-              <li><Link href="/global-recruitment" className="footer-link">Global Recruitment</Link></li>
-              <li><Link href="/how-it-works" className="footer-link">How It Works</Link></li>
-              <li><Link href="/destinations" className="footer-link">Destinations</Link></li>
-              <li><Link href="/about" className="footer-link">About Vantara</Link></li>
-              <li><Link href="/contact" className="footer-link">Contact</Link></li>
-            </ul>
-          </div>
-
-          {/* Opportunities */}
-          <div>
-            <h4 className="footer-col-title">Opportunities</h4>
+            <h3 className="footer-col-title">For your next chapter</h3>
             <ul className="footer-links">
               <li><Link href="/global-recruitment#cv-builder" className="footer-link">Build Your CV</Link></li>
-              <li>
-                <button
-                  type="button"
-                  className="footer-link"
-                  onClick={onOpenWorkerModal}
-                  style={{ background: 'none', border: 'none', padding: 0, cursor: 'pointer', textAlign: 'left' }}
-                >
-                  Join Our Workforce
-                </button>
-              </li>
+              <li><button type="button" className="footer-link" onClick={onOpenWorkerModal}>Join Our Workforce</button></li>
               <li><Link href="/destinations" className="footer-link">Destination Hubs</Link></li>
               <li><Link href="/solutions" className="footer-link">Operational Roles</Link></li>
             </ul>
           </div>
-
-          {/* Company & Governance */}
           <div>
-            <h4 className="footer-col-title">Company</h4>
+            <h3 className="footer-col-title">Company</h3>
             <ul className="footer-links">
               <li><Link href="/about" className="footer-link">Ascentra Global Ltd</Link></li>
               <li><Link href="/contact" className="footer-link">Employer Consultation</Link></li>
-              <li><span className="footer-pill" style={{ marginTop: '8px' }}>Direct Employer Service</span></li>
             </ul>
+            <span className="footer-service-note">Direct Employer Service</span>
           </div>
-
         </div>
-
-        {/* Footer Bottom Legal */}
+        <div className="footer-wordmark" aria-hidden="true">VANTARA</div>
         <div className="footer-bottom">
-          <p className="footer-legal-note">
-            Vantara Workforce Solutions operates as an international hospitality workforce coordinator under Ascentra Global Ltd. The employer retains ultimate hiring discretion and bears applicable employment and destination-side costs in accordance with bilateral agreements.
-          </p>
-          <p className="footer-copyright">
-            &copy; {new Date().getFullYear()} Vantara Workforce Solutions. All rights reserved.
-          </p>
+          <p className="footer-legal-note">Vantara Workforce Solutions operates as an international hospitality workforce coordinator under Ascentra Global Ltd. The employer retains ultimate hiring discretion and bears applicable employment and destination-side costs in accordance with bilateral agreements.</p>
+          <p className="footer-copyright">© {new Date().getFullYear()} Vantara Workforce Solutions.<br />All rights reserved.</p>
         </div>
-
       </div>
     </footer>
   );

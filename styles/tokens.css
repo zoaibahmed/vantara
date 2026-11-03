@@ -35,7 +35,7 @@
   /* Typography / Refined Charcoal */
   --text-primary: #19231E;        /* Deep Charcoal */
   --text-secondary: #48574F;      /* Refined Slate Charcoal */
-  --text-muted: #718178;
+  --text-muted: #596B60;
   --text-light: #94A29B;
   --text-inverse: #FAF8F5;
   --text-inverse-muted: #C5D1CB;
@@ -50,8 +50,8 @@
   --focus-ring: rgba(24, 59, 43, 0.35);
 
   /* Typography */
-  --font-display: 'Cormorant Garamond', Georgia, serif;
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: var(--font-cormorant), 'Cormorant Garamond', Georgia, serif;
+  --font-sans: var(--font-jakarta), 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
 
   --fw-normal: 400;
@@ -101,8 +101,8 @@
   /* Radii */
   --radius-xs: 2px;
   --radius-sm: 4px;
-  --radius-md: 8px;
-  --radius-lg: 14px;
+  --radius-md: 2px;
+  --radius-lg: 3px;
   --radius-pill: 9999px;
 
   /* Motion */
@@ -113,5 +113,9 @@
   --duration-slow: 750ms;
   --duration-cinematic: 1100ms;
 
-  --header-height: 84px;
+  --header-height: 132px;
+  --section-space: clamp(3.5rem, 7.5vw, 8rem);
+  --type-hero: clamp(3rem, 5.6vw, 5.8rem);
+  --type-section: clamp(2.4rem, 4.4vw, 4.5rem);
+  --grid-gap: clamp(1.5rem, 4vw, 4rem);
 }

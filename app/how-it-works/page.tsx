@@ -118,7 +118,7 @@ export default function HowItWorksPage() {
           <div className="page-hero-grid">
             <div>
               <span className="label-editorial">Coordination Workflow</span>
-              <h1 className="display-hero" style={{ margin: 'var(--space-4) 0 var(--space-6)', textTransform: 'uppercase' }}>
+              <h1 className="display-hero" style={{ margin: 'var(--space-4) 0 var(--space-6)' }}>
                 Tell Us What You Need.<br />
                 <em>We Coordinate The Rest.</em>
               </h1>
@@ -158,7 +158,7 @@ export default function HowItWorksPage() {
           
           <div className="max-w-editorial" style={{ marginBottom: 'var(--space-10)' }}>
             <span className="label-editorial">End-to-End Roadmap</span>
-            <h2 className="display-2" style={{ marginTop: 'var(--space-2)', textTransform: 'uppercase' }}>
+            <h2 className="display-2" style={{ marginTop: 'var(--space-2)' }}>
               The 5-Stage Coordination Process.
             </h2>
             <p className="lead-text">
@@ -175,11 +175,11 @@ export default function HowItWorksPage() {
               >
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 'var(--space-2)', marginBottom: 'var(--space-2)' }}>
                   <span className="label-editorial" style={{ margin: 0, color: 'var(--brand-forest)' }}>{stage.stage}</span>
-                  <span style={{ fontSize: '0.75rem', fontWeight: 'var(--fw-bold)', color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.08em' }}>
+                  <span style={{ fontSize: '0.75rem', fontWeight: 'var(--fw-bold)', color: 'var(--text-muted)', letterSpacing: '0.08em' }}>
                     {stage.timing}
                   </span>
                 </div>
-                <h3 className="display-3" style={{ margin: 'var(--space-1) 0 var(--space-2)', textTransform: 'uppercase' }}>{stage.title}</h3>
+                <h3 className="display-3" style={{ margin: 'var(--space-1) 0 var(--space-2)' }}>{stage.title}</h3>
                 <p className="lead-text" style={{ fontSize: '1rem', color: 'var(--brand-forest-deep)', marginBottom: 'var(--space-4)' }}>
                   {stage.summary}
                 </p>
@@ -202,7 +202,7 @@ export default function HowItWorksPage() {
         <div className="container-editorial">
           <div className="max-w-editorial" style={{ marginBottom: 'var(--space-8)' }}>
             <span className="label-editorial">Partnership Roles</span>
-            <h2 className="display-2" style={{ marginTop: 'var(--space-2)', textTransform: 'uppercase' }}>
+            <h2 className="display-2" style={{ marginTop: 'var(--space-2)' }}>
               Who Does What.
             </h2>
             <p className="lead-text">
@@ -214,9 +214,9 @@ export default function HowItWorksPage() {
             <table style={{ width: '100%', borderCollapse: 'collapse', backgroundColor: 'var(--bg-surface)', borderRadius: 'var(--radius-md)', overflow: 'hidden', border: '1px solid var(--border-warm)' }}>
               <thead>
                 <tr style={{ backgroundColor: 'var(--brand-forest-deep)', color: 'var(--text-inverse)', textAlign: 'left' }}>
-                  <th style={{ padding: 'var(--space-4)', fontSize: '0.8125rem', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Operational Aspect</th>
-                  <th style={{ padding: 'var(--space-4)', fontSize: '0.8125rem', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Vantara Coordination</th>
-                  <th style={{ padding: 'var(--space-4)', fontSize: '0.8125rem', textTransform: 'uppercase', letterSpacing: '0.08em' }}>Employer Authority</th>
+                  <th style={{ padding: 'var(--space-4)', fontSize: '0.8125rem', letterSpacing: '0.08em' }}>Operational Aspect</th>
+                  <th style={{ padding: 'var(--space-4)', fontSize: '0.8125rem', letterSpacing: '0.08em' }}>Vantara Coordination</th>
+                  <th style={{ padding: 'var(--space-4)', fontSize: '0.8125rem', letterSpacing: '0.08em' }}>Employer Authority</th>
                 </tr>
               </thead>
               <tbody>
@@ -244,7 +244,7 @@ export default function HowItWorksPage() {
         <div className="container-editorial">
           <div className="max-w-editorial" style={{ marginBottom: 'var(--space-8)' }}>
             <span className="label-editorial">Employer Inquiries</span>
-            <h2 className="display-2" style={{ marginTop: 'var(--space-2)', textTransform: 'uppercase' }}>
+            <h2 className="display-2" style={{ marginTop: 'var(--space-2)' }}>
               Frequently Asked Questions.
             </h2>
           </div>
@@ -268,7 +268,7 @@ export default function HowItWorksPage() {
       <section className="climax-statement-section">
         <div className="container-editorial">
           <span className="label-editorial" style={{ color: 'var(--champagne)' }}>Take The Next Step</span>
-          <h2 style={{ textTransform: 'uppercase' }}>Discuss Your Timeline With Us.</h2>
+          <h2 style={{ textTransform: 'none' }}>Discuss Your Timeline With Us.</h2>
           <p>Tell us what your property needs. Our coordination team will review your parameters and provide a clear operational roadmap.</p>
           <Link href="/contact" className="btn btn-inverse-primary btn-lg">
             <span>Request Workforce Consultation</span>

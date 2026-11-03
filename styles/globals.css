@@ -9,6 +9,7 @@
 @import './components.css';
 @import './footer.css';
 @import './design-system.css';
+@import './editorial.css';
 
 *, *::before, *::after {
   box-sizing: border-box;
