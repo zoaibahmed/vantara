@@ -28,8 +28,9 @@ export default function Footer({ onOpenWorkerModal }: FooterProps) {
             <h4 className="footer-col-title">Explore</h4>
             <ul className="footer-links">
               <li><Link href="/solutions" className="footer-link">Solutions</Link></li>
-              <li><Link href="/how-it-works" className="footer-link">How It Works</Link></li>
               <li><Link href="/workforce" className="footer-link">Workforce</Link></li>
+              <li><Link href="/global-recruitment" className="footer-link">Global Recruitment</Link></li>
+              <li><Link href="/how-it-works" className="footer-link">How It Works</Link></li>
               <li><Link href="/destinations" className="footer-link">Destinations</Link></li>
               <li><Link href="/about" className="footer-link">About Vantara</Link></li>
               <li><Link href="/contact" className="footer-link">Contact</Link></li>
@@ -40,6 +41,7 @@ export default function Footer({ onOpenWorkerModal }: FooterProps) {
           <div>
             <h4 className="footer-col-title">Opportunities</h4>
             <ul className="footer-links">
+              <li><Link href="/global-recruitment#cv-builder" className="footer-link">Build Your CV</Link></li>
               <li>
                 <button
                   type="button"
