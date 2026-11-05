@@ -51,7 +51,7 @@ export async function submitCandidateApplication(
       message: data.message || (response.ok ? 'Your candidate profile has been registered.' : 'Submission failed.')
     };
   } catch (error: any) {
-    console.error('[Vantara Service] Error submitting candidate application:', error);
+    console.error('[Viaferra Service] Error submitting candidate application:', error);
     return {
       success: false,
       message: 'Network error communicating with the server. Please email admin@britsync.co.uk directly.'

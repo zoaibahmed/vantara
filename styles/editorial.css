@@ -64,3 +64,56 @@
 @media (prefers-reduced-motion: reduce) { .mobile-nav-drawer[open] { animation: none; } .editorial-image img { transition: none; } }
 @media (max-width: 560px) { .header-actions .header-cta { display: none; } }
 .page-route-progress-bar { background: var(--brand-forest); box-shadow: none; }
+/* Second art-direction pass: immersive opening and distinct page compositions. */
+.home-hero { background: var(--brand-forest-deep); color: var(--bg-primary); padding: var(--header-height) 0 0; }
+.home-hero > .container-wide { max-width: none; padding: 0; }
+.home-hero .hero-grid { grid-template-columns: 1.05fr 1fr; gap: 0; min-height: 710px; }
+.home-hero .hero-content { padding: clamp(48px,6vw,100px) var(--gutter); position: relative; z-index: 1; }
+.home-hero .display-hero { color: var(--bg-primary); font-size: clamp(3.4rem,6.4vw,7rem); font-weight: 400; }
+.home-hero .lead-text { color: var(--text-inverse-muted); max-width: 43ch; }
+.home-hero .label-editorial { color: var(--champagne); }
+.home-hero .btn-primary { background: var(--champagne); color: var(--brand-forest-deep); border-color: var(--champagne); }
+.home-hero .btn-secondary { color: var(--bg-primary); border-color: #8b9c91; }
+.home-hero .btn-secondary:hover { color: var(--brand-forest-deep); }
+.home-hero .hero-media-wrapper { border: 0; min-height: 100%; }
+.home-hero .hero-image { object-position: 53% center; }
+.home-hero .hero-media-caption { bottom: 32px; left: 32px; right: 32px; background: var(--bg-primary); color: var(--brand-forest-deep); }
+.home-hero .caption { color: var(--text-inverse-muted) !important; }
+.human-moment-grid { grid-template-columns: .85fr 1.15fr; gap: clamp(32px,7vw,100px); }
+.human-corridor-card { border: 0; border-bottom: 1px solid var(--border-forest); background: transparent; }
+.human-corridor-card:nth-child(2) { margin-top: 64px; }
+.human-corridor-card:nth-child(3) { margin-top: 128px; }
+.corridor-card-media { height: 340px; }
+.corridor-card-content { padding: 28px 0; }
+.reality-split-layout { grid-template-columns: 1fr 1.25fr; }
+.operational-stream-track { border-radius: 0; box-shadow: none; }
+.role-composition-block { grid-template-columns: 1.35fr 1fr; gap: clamp(32px,7vw,100px); padding-block: 48px; border-top: 1px solid var(--border-medium); }
+.role-media-col { height: 500px; }
+.journey-steps-grid { gap: 0; }
+.journey-step-item { border-radius: 0; box-shadow: none; background: transparent; border: 0; border-left: 1px solid var(--border-forest); }
+.page-solutions .page-hero-grid, .page-destinations .page-hero-grid { grid-template-columns: 1fr; gap: 40px; }
+.page-solutions .page-hero-grid > div:first-child, .page-destinations .page-hero-grid > div:first-child { max-width: 1000px; }
+.page-solutions .page-hero-media, .page-destinations .page-hero-media { height: 430px; }
+.page-workforce .page-hero, .page-about .page-hero { background: var(--brand-forest-deep); color: var(--bg-primary); }
+.page-workforce .page-hero :is(h1,.lead-text,.label-editorial), .page-about .page-hero :is(h1,.lead-text,.label-editorial) { color: var(--bg-primary); }
+.page-workforce .page-hero .btn, .page-about .page-hero .btn { background: var(--champagne); color: var(--brand-forest-deep); }
+.page-about .page-hero-grid { grid-template-columns: 1.3fr .7fr; }
+.page-about .page-hero-media { height: 620px; }
+.page-contact .page-hero { background: var(--bg-secondary); }
+.page-how-it-works .page-hero-media { border-radius: 50% 50% 0 0; }
+@media(max-width: 1024px) {
+ .page-about .page-hero-grid { grid-template-columns: 1fr; }
+ .page-about .page-hero-media { height: 420px; }
+}
+@media(max-width:768px) {
+ .home-hero { padding-top: var(--header-height); }
+ .home-hero .hero-grid { grid-template-columns: 1fr; }
+ .home-hero .hero-content { padding: 44px var(--gutter); }
+ .home-hero .display-hero { font-size: clamp(3.25rem,11vw,5rem); }
+ .home-hero .hero-media-wrapper { min-height: 0; height: 480px; }
+ .home-hero .hero-media-caption { inset: auto 20px 20px; }
+ .human-moment-grid,.reality-split-layout,.role-composition-block { grid-template-columns: 1fr; }
+ .human-corridor-card:nth-child(n) { margin-top: 0; }
+ .role-media-col { height: 360px; }
+ .page-solutions .page-hero-media,.page-destinations .page-hero-media { height: 320px; }
+}

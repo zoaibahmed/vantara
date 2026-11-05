@@ -1,6 +1,6 @@
 /**
  * Navigation System Interaction & Responsive Behavior
- * Vantara Workforce Solutions (Ascentra Global Ltd)
+ * Viaferra Workforce Solutions (Ascentra Global Ltd)
  */
 
 export function initNavigation() {

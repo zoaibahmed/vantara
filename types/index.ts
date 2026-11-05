@@ -1,5 +1,5 @@
 /**
- * Vantara Workforce Solutions - TypeScript Domain Models
+ * Viaferra Workforce Solutions - TypeScript Domain Models
  * A venture of Ascentra Global Ltd
  */
 

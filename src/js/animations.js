@@ -1,6 +1,6 @@
 /**
  * Animation & Motion Principles
- * Vantara Workforce Solutions
+ * Viaferra Workforce Solutions
  * - Slow, cinematic, intentional
  * - Respects prefers-reduced-motion
  */

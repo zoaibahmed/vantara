@@ -1,56 +1,56 @@
 'use client';
 
-import React, { useState } from 'react';
-import GlobalRecruitmentHero from '@/components/global-recruitment/GlobalRecruitmentHero';
-import GlobalRecruitmentIntro from '@/components/global-recruitment/GlobalRecruitmentIntro';
-import DestinationCards from '@/components/global-recruitment/DestinationCards';
-import RecruitmentIndustries from '@/components/global-recruitment/RecruitmentIndustries';
-import WorkforceCategories from '@/components/global-recruitment/WorkforceCategories';
-import RecruitmentProcess from '@/components/global-recruitment/RecruitmentProcess';
-import CandidateCVBuilder from '@/components/global-recruitment/CandidateCVBuilder';
-import EmployerRecruitmentCTA from '@/components/global-recruitment/EmployerRecruitmentCTA';
-import RecruitmentFAQ from '@/components/global-recruitment/RecruitmentFAQ';
-import GlobalRecruitmentFinalCTA from '@/components/global-recruitment/GlobalRecruitmentFinalCTA';
+import { useEffect, useState } from 'react';
+import GlobalRecruitmentHero from './GlobalRecruitmentHero';
+import WorkforceCategories from './WorkforceCategories';
+import RecruitmentProcess from './RecruitmentProcess';
+import CandidateCVBuilder from './CandidateCVBuilder';
+import EmployerRecruitmentCTA from './EmployerRecruitmentCTA';
+import RecruitmentFAQ from './RecruitmentFAQ';
+import GlobalRecruitmentFinalCTA from './GlobalRecruitmentFinalCTA';
+import IndustryExplorer from '@/components/journal/IndustryExplorer';
+import RegionFocus from '@/components/journal/RegionFocus';
+import { RECRUITMENT_INDUSTRIES, TARGET_REGIONS } from '@/lib/recruitment/constants';
 
 export default function GlobalRecruitmentClientPage() {
-  const [selectedDestination, setSelectedDestination] = useState<string>('');
-  const [selectedIndustry, setSelectedIndustry] = useState<string>('');
-  const [selectedCategory, setSelectedCategory] = useState<'Skilled' | 'Semi-Skilled' | 'Entry-Level' | ''>('');
+  const [destination, setDestination] = useState('');
+  const [industry, setIndustry] = useState('');
+  const [category, setCategory] = useState<'Skilled' | 'Semi-Skilled' | 'Entry-Level' | ''>('');
+
+  useEffect(() => {
+    function applyPreferences() {
+      const query = new URLSearchParams(window.location.search);
+      const region = TARGET_REGIONS.find(item => item.id === query.get('region'));
+      const sector = RECRUITMENT_INDUSTRIES.find(item => item.id === query.get('industry'));
+      if (region) setDestination(region.region);
+      if (sector) setIndustry(sector.name);
+    }
+    applyPreferences();
+    window.addEventListener('popstate', applyPreferences);
+    return () => window.removeEventListener('popstate', applyPreferences);
+  }, []);
+
+  function openBuilder() {
+    document.getElementById('cv-builder')?.scrollIntoView();
+    document.querySelector<HTMLElement>('#cv-builder h2')?.focus({ preventScroll: true });
+  }
 
   return (
-    <main id="main-content">
-      {/* 01: Hero */}
+    <main id="main-content" className="page-global-recruitment">
       <GlobalRecruitmentHero />
-
-      {/* 02: Introduction */}
-      <GlobalRecruitmentIntro />
-
-      {/* 03: Destinations with preselection trigger */}
-      <DestinationCards onSelectDestination={(region) => setSelectedDestination(region)} />
-
-      {/* 04: Industries We Serve with preselection trigger */}
-      <RecruitmentIndustries onSelectIndustry={(industry) => setSelectedIndustry(industry)} />
-
-      {/* 05: Workforce Categories with preselection trigger */}
-      <WorkforceCategories onSelectCategory={(cat) => setSelectedCategory(cat)} />
-
-      {/* 06: How It Works Timeline */}
+      <nav className="container-wide global-section-nav" id="page-story" aria-label="On this page">
+        <a href="#cv-builder">Build Your CV</a>
+        <a href="#industries-section">Industries</a>
+        <a href="#destinations-section">Regions</a>
+        <a href="#employer-section">For employers</a>
+      </nav>
+      <CandidateCVBuilder preselectedDestination={destination} preselectedIndustry={industry} preselectedCategory={category} />
+      <IndustryExplorer onSelect={name => { setIndustry(name); openBuilder(); }} />
+      <RegionFocus onSelect={region => { setDestination(region); openBuilder(); }} />
+      <WorkforceCategories onSelectCategory={setCategory} />
       <RecruitmentProcess />
-
-      {/* 07: Build Your Professional CV (Centerpiece) */}
-      <CandidateCVBuilder
-        preselectedDestination={selectedDestination}
-        preselectedIndustry={selectedIndustry}
-        preselectedCategory={selectedCategory}
-      />
-
-      {/* 08: Employer Section */}
       <EmployerRecruitmentCTA />
-
-      {/* 09: FAQ Section */}
       <RecruitmentFAQ />
-
-      {/* 10: Final CTA */}
       <GlobalRecruitmentFinalCTA />
     </main>
   );

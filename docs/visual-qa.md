@@ -33,3 +33,7 @@ Preview used port 3100 and an isolated `.next-preview` build directory because p
 ## Limits and remaining work
 
 No real applications or emails were submitted. SMTP delivery, CV upload/PDF generation and the entire CV wizard were not exercised end to end; their existing service/API logic is unchanged. External photography availability and licensing still need a content pass. These are Chrome layout and interaction checks, not a full cross-browser accessibility audit. Bespoke recomposition of supporting-page sections remains outlined in `docs/design-audit.md`.
+
+## 4 November update
+
+The route-level redesign described in `docs/luxury-redesign.md` supersedes the earlier page-level-work list. All eight routes now use the new direction. Recruitment region/industry preselection was checked through CV step 2; service accordions and the department gallery were checked. Email delivery and final application submission were not exercised.

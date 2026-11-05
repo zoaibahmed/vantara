@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Cormorant_Garamond, Plus_Jakarta_Sans } from 'next/font/google';
 import '@/styles/globals.css';
 import ClientLayout from './ClientLayout';
+import { getSiteUrl } from '@/lib/site-url';
 
 const cormorant = Cormorant_Garamond({
   subsets: ['latin'],
@@ -19,13 +20,15 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'Vantara Workforce Solutions | International Hospitality Workforce',
+  metadataBase: getSiteUrl(),
+  applicationName: 'Viaferra Workforce Solutions',
+  title: 'Viaferra | Global Recruitment & International Workforce Solutions',
   description:
-    'Vantara Workforce Solutions connects tourism businesses with international hospitality professionals and helps coordinate workforce recruitment and deployment. A venture of Ascentra Global Ltd.',
+    'Global recruitment and international workforce coordination across essential industries. Skilled, semi-skilled and entry-level talent. A venture of Ascentra Global Ltd.',
   openGraph: {
-    title: 'Vantara Workforce Solutions | Your Hospitality Workforce. Coordinated.',
+    title: 'Viaferra | Global Recruitment & International Workforce Solutions',
     description:
-      'Connecting tourism businesses with hospitality professionals from established international workforce markets. Sourcing and deployment for island and resort destinations.',
+      'Connecting employers and international talent across essential industries. Hospitality workforce solutions is our specialist service.',
     type: 'website'
   }
 };

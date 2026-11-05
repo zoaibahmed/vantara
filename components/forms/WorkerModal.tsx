@@ -53,14 +53,18 @@ export default function WorkerModal({ isOpen, onClose }: WorkerModalProps) {
 
   if (!isOpen) return null;
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (isSubmitting) return;
+    const submittedForm = e.currentTarget;
+    setFeedback(null);
     setIsSubmitting(true);
     const res = await submitCandidateApplication(formData, cvFile);
     setIsSubmitting(false);
     setIsSuccess(res.success);
     setFeedback(res.message);
     if (res.success) {
+      submittedForm.reset();
       setFormData({
         fullName: '',
         country: '',
@@ -85,7 +89,7 @@ export default function WorkerModal({ isOpen, onClose }: WorkerModalProps) {
           <div>
             <span className="label-editorial" style={{ margin: 0, color: 'var(--brand-forest)' }}>Candidate Registration</span>
             <h3 className="display-3" id="workerModalHeading" style={{ color: 'var(--brand-forest-deep)', margin: 'var(--space-1) 0 0' }}>
-              Join Our International Workforce
+              Hospitality Candidate Registration
             </h3>
           </div>
           <button className="modal-close-btn" onClick={onClose} aria-label="Close candidate modal">
@@ -97,7 +101,7 @@ export default function WorkerModal({ isOpen, onClose }: WorkerModalProps) {
         </div>
 
         {isSuccess ? (
-          <div className="modal-feedback-box">
+          <div className="modal-feedback-box" role="status" aria-live="polite">
             <div className="badge-pill badge-forest" style={{ marginBottom: 'var(--space-3)' }}>Application Received</div>
             <h4 style={{ fontFamily: 'var(--font-display)', fontSize: '1.4rem', color: 'var(--brand-forest-deep)', marginBottom: 'var(--space-2)' }}>
               Thank you for registering.
@@ -120,8 +124,8 @@ export default function WorkerModal({ isOpen, onClose }: WorkerModalProps) {
               <div className="form-group">
                 <label htmlFor="mName" className="form-label">Full Name *</label>
                 <input
-                  type="text"
-                  id="mName"
+                  type="text" maxLength={200}
+                  id="mName" name="mName" autoComplete="name"
                   className="form-input"
                   placeholder="e.g. Maria Santos"
                   value={formData.fullName}
@@ -132,8 +136,8 @@ export default function WorkerModal({ isOpen, onClose }: WorkerModalProps) {
               <div className="form-group">
                 <label htmlFor="mCountry" className="form-label">Country of Origin / Residence *</label>
                 <input
-                  type="text"
-                  id="mCountry"
+                  type="text" maxLength={200}
+                  id="mCountry" name="mCountry" autoComplete="country-name"
                   className="form-input"
                   placeholder="e.g. Philippines, Bangladesh, Nepal"
                   value={formData.country}
@@ -147,8 +151,8 @@ export default function WorkerModal({ isOpen, onClose }: WorkerModalProps) {
               <div className="form-group">
                 <label htmlFor="mPhone" className="form-label">Phone / WhatsApp *</label>
                 <input
-                  type="tel"
-                  id="mPhone"
+                  type="tel" maxLength={60}
+                  id="mPhone" name="mPhone" autoComplete="tel"
                   className="form-input"
                   placeholder="+63 912 345 6789"
                   value={formData.phone}
@@ -159,8 +163,8 @@ export default function WorkerModal({ isOpen, onClose }: WorkerModalProps) {
               <div className="form-group">
                 <label htmlFor="mEmail" className="form-label">Email Address *</label>
                 <input
-                  type="email"
-                  id="mEmail"
+                  type="email" maxLength={254} spellCheck={false}
+                  id="mEmail" name="mEmail" autoComplete="email"
                   className="form-input"
                   placeholder="candidate@example.com"
                   value={formData.email}
@@ -174,8 +178,8 @@ export default function WorkerModal({ isOpen, onClose }: WorkerModalProps) {
               <div className="form-group">
                 <label htmlFor="mProfession" className="form-label">Primary Profession / Role *</label>
                 <input
-                  type="text"
-                  id="mProfession"
+                  type="text" maxLength={200}
+                  id="mProfession" name="mProfession"
                   className="form-input"
                   placeholder="e.g. Pastry Chef, Head Waiter, Housekeeping"
                   value={formData.profession}
@@ -186,8 +190,8 @@ export default function WorkerModal({ isOpen, onClose }: WorkerModalProps) {
               <div className="form-group">
                 <label htmlFor="mExp" className="form-label">Hospitality Experience (Years) *</label>
                 <input
-                  type="text"
-                  id="mExp"
+                  type="text" maxLength={200}
+                  id="mExp" name="mExp"
                   className="form-input"
                   placeholder="e.g. 4 Years"
                   value={formData.experienceYears}
@@ -200,8 +204,8 @@ export default function WorkerModal({ isOpen, onClose }: WorkerModalProps) {
             <div className="form-group">
               <label htmlFor="mDest" className="form-label">Preferred Destination Region (Optional)</label>
               <input
-                type="text"
-                id="mDest"
+                type="text" maxLength={200}
+                id="mDest" name="mDest"
                 className="form-input"
                 placeholder="e.g. Seychelles, Maldives, Belize"
                 value={formData.preferredDestination}
@@ -213,19 +217,21 @@ export default function WorkerModal({ isOpen, onClose }: WorkerModalProps) {
               <label htmlFor="mCV" className="form-label">CV / Resume Upload (PDF or DOCX)</label>
               <input
                 type="file"
-                id="mCV"
+                id="mCV" name="mCV"
                 className="form-input form-file-input"
                 accept=".pdf,.doc,.docx"
                 onChange={(e) => {
-                  if (e.target.files && e.target.files[0]) {
-                    setCvFile(e.target.files[0]);
+                  const selected = e.target.files?.[0] || null;
+                  if (selected && (selected.size > 6 * 1024 * 1024 || !/\.(pdf|doc|docx)$/i.test(selected.name))) {
+                    setFeedback('Choose a PDF, DOC or DOCX file smaller than 6MB.'); setIsSuccess(false); setCvFile(null); e.target.value = ''; return;
                   }
+                  setFeedback(null); setCvFile(selected);
                 }}
               />
             </div>
 
             {feedback && !isSuccess && (
-              <div
+              <div role="alert"
                 style={{
                   padding: 'var(--space-3)',
                   backgroundColor: '#FDEDEC',
@@ -247,7 +253,7 @@ export default function WorkerModal({ isOpen, onClose }: WorkerModalProps) {
             </div>
 
             <p className="form-privacy-note" style={{ textAlign: 'center', marginTop: 'var(--space-3)' }}>
-              Zero recruitment fees charged to candidates. All applications are evaluated under Vantara’s Ethical Recruitment Charter.
+              This specialist registration is for hospitality roles. Your profile is sent to the recruitment team for review; registration does not guarantee employment.
             </p>
           </form>
         )}

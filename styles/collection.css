@@ -1,0 +1,175 @@
+/* Hospitality journal: route-specific compositions and shared motion language. */
+.collection-opening { padding-top: calc(var(--header-height) + 64px); overflow: hidden; }
+.collection-heading { max-width: 1540px; margin: auto; padding-inline: var(--gutter); }
+.collection-chapter { display: flex; align-items: center; gap: 14px; font-size: .7rem; color: var(--text-secondary); margin-bottom: 42px; }
+.collection-chapter a { color: inherit; text-decoration: none; }
+.collection-heading h1 { font-size: clamp(3.5rem,7.7vw,8.4rem); font-weight: 400; line-height: .98; letter-spacing: -.045em; max-width: 13ch; text-wrap: balance; }
+.collection-introduction { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; margin-top: 36px; }
+.collection-introduction > p { max-width: 49ch; color: var(--text-secondary); font-size: 1rem; line-height: 1.8; }
+.collection-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 24px; }
+.collection-secondary { display: inline-flex; align-items: center; gap: 24px; border: 0; border-bottom: 1px solid currentColor; background: transparent; color: var(--brand-forest); padding: 12px 0; font-size: .8rem; text-decoration: none; cursor: pointer; }
+.collection-media { position: relative; margin: 56px var(--gutter) 0; height: min(62vw,640px); overflow: hidden; }
+.collection-media-inner { position: absolute; inset: -70px 0 0; }
+.collection-media-inner img { object-fit: cover; }
+.collection-photo-caption { position: absolute; bottom: 20px; left: 20px; background: var(--bg-primary); padding: 12px 18px; color: var(--brand-forest); font-size: .7rem; }
+.collection-endnote { margin: auto; max-width: 1540px; padding: 24px var(--gutter); display: flex; justify-content: space-between; gap: 20px; font-size: .68rem; border-bottom: 1px solid var(--border-medium); }
+.collection-endnote a { color: var(--brand-forest); text-decoration: none; }
+.collection-endnote a span { margin-left: 30px; }
+/* Portrait cover: display type spans the page, portrait sits below its right edge. */
+.collection-opening--portrait { background: var(--brand-forest-deep); color: var(--bg-primary); position: relative; }
+.collection-opening--portrait .collection-heading h1 { color: inherit; max-width: 11ch; font-size: clamp(4rem,9vw,9.5rem); position: relative; z-index: 2; }
+.collection-opening--portrait .collection-chapter, .collection-opening--portrait .collection-introduction > p { color: var(--text-inverse-muted); }
+.collection-opening--portrait .collection-introduction { display: block; max-width: 46%; padding-bottom: 100px; }
+.collection-opening--portrait .collection-actions { margin-top: 28px; }
+.collection-opening--portrait .btn-primary { color: var(--brand-forest-deep); background: var(--champagne); }
+.collection-opening--portrait .collection-secondary, .collection-opening--portrait .collection-endnote a { color: var(--champagne); }
+.collection-opening--portrait .collection-media { position: absolute; width: 40%; right: var(--gutter); top: calc(var(--header-height) + 140px); bottom: 90px; height: auto; margin: 0; }
+.collection-opening--portrait .collection-media::after { content: ''; position: absolute; inset: 0; background: rgba(14,39,27,.12); }
+.collection-opening--portrait .collection-photo-caption { z-index: 1; }
+.collection-opening--portrait .collection-endnote { color: var(--text-inverse-muted); border-color: #ede4d340; }
+/* Manifesto cover: centered statement, panoramic image, deliberate narrow prose. */
+.collection-opening--manifesto .collection-heading { text-align: center; }
+.collection-opening--manifesto .collection-chapter { justify-content: center; }
+.collection-opening--manifesto h1 { margin: auto; max-width: 15ch; }
+.collection-opening--manifesto .collection-introduction { flex-direction: column; align-items: center; gap: 28px; }
+.collection-opening--manifesto .collection-media { height: 440px; margin-inline: clamp(20px,12vw,190px); }
+.collection-opening--invitation { background: var(--champagne); position: relative; padding-bottom: 20px; }
+.collection-opening--invitation h1 { max-width: 12ch; }
+.collection-opening--invitation .collection-media { width: 200px; height: 240px; position: absolute; right: 8%; top: calc(var(--header-height) + 75px); margin: 0; transform: rotate(4deg); }
+.collection-opening--invitation .collection-photo-caption { display: none; }
+.collection-opening--invitation .collection-introduction { padding-bottom: 48px; }
+.service-collection { margin-top: 52px; }
+.service-chapter { border-top: 1px solid var(--border-forest); }
+.service-chapter:last-child { border-bottom: 1px solid var(--border-forest); }
+.service-chapter summary { display: grid; grid-template-columns: 1fr 2.6fr 50px; align-items: center; gap: 32px; cursor: pointer; padding-block: 32px; list-style: none; }
+.service-chapter summary::-webkit-details-marker { display: none; }
+.service-chapter summary > span:first-child { font-size: .72rem; color: var(--text-secondary); }
+.service-chapter summary h3 { font-size: clamp(1.9rem,3.5vw,3.6rem); line-height: 1.1; }
+.service-toggle { font-size: 2rem; text-align: right; transition: transform .3s; }
+.service-chapter[open] .service-toggle { transform: rotate(45deg); }
+.service-chapter-body { padding-bottom: 44px; }
+.service-panorama { position: relative; height: clamp(320px,40vw,540px); overflow: hidden; }
+.service-panorama img { object-fit: cover; }
+.service-description { margin: 32px 0; display: flex; justify-content: space-between; gap: 48px; }
+.service-description > p:last-child { max-width: 32ch; font-family: var(--font-display); font-size: 1.7rem; line-height: 1.25; color: var(--brand-forest); }
+.service-roles { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: 24px; padding-block: 24px; border-top: 1px solid var(--border-medium); }
+.service-roles dt { font-size: .85rem; font-weight: 600; margin-bottom: 10px; }
+.service-roles dd { font-size: .78rem; color: var(--text-secondary); line-height: 1.7; }
+/* Destination dossiers are photographic chapters, with inset editorial sheets. */
+.page-destinations .collection-entry { display: block; padding: 0; border: 0; margin-bottom: 50px; }
+.page-destinations .collection-entry .role-media-col { height: 600px; }
+.page-destinations .collection-entry .role-text-col { position: relative; width: min(850px,90%); margin: -130px 0 0 auto; padding: clamp(28px,5vw,70px); background: var(--bg-primary); z-index: 2; }
+.page-destinations .collection-entry:nth-child(even) .role-text-col { margin-left: 0; margin-right: auto; background: var(--champagne); }
+.page-destinations .collection-entry .role-action-badge { top: 24px; bottom: auto; }
+.page-destinations .collection-entry h3 { font-size: clamp(2.8rem,5vw,5rem); }
+/* Workforce dossiers become a portrait collection, not alternating split sections. */
+.page-workforce .collection-entry { display: grid; grid-template-columns: .65fr 1.35fr; gap: 0; padding: 0; margin-bottom: 60px; border: 1px solid var(--border-medium); }
+.page-workforce .collection-entry .role-media-col { height: auto; min-height: 600px !important; order: 0; }
+.page-workforce .collection-entry .role-text-col { padding: clamp(28px,5vw,70px); background: var(--bg-secondary); order: 1; }
+.page-workforce .collection-entry .role-text-col h3 { font-size: clamp(3rem,5vw,5rem); }
+/* About reads as a long-form journal, with principles presented as readable rows. */
+.page-about > section:nth-of-type(2) .container-editorial { max-width: 1000px; }
+.page-about > section:nth-of-type(2) h2 { font-size: clamp(2.8rem,5vw,5rem); }
+.page-about > section:nth-of-type(3) .container > div:last-child { display: block !important; }
+.page-about .trust-pillar-card { display: grid; grid-template-columns: 70px 1.1fr 1.4fr; gap: 10px 40px; background: transparent !important; padding: 34px 0 !important; border: 0 !important; border-top: 1px solid var(--border-medium) !important; }
+.page-about .trust-pillar-card .journey-step-num { grid-row: span 2; }
+.page-about .trust-pillar-card h3 { font-size: 2rem !important; }
+.page-about .trust-pillar-card > p:last-child { grid-column: 3; grid-row: 1 / span 2; align-self: center; }
+.page-about .trust-pillar-card > p:not(:last-child) { grid-column: 2; }
+.page-about > section:nth-of-type(4) { background: var(--brand-forest-deep); color: var(--bg-primary); }
+.page-about > section:nth-of-type(4) :is(h2,.lead-text,.label-editorial) { color: var(--bg-primary); }
+.page-how-it-works .journey-step-item { background: transparent !important; border: 0 !important; border-top: 1px solid var(--border-forest) !important; padding: 40px 0 40px 70px !important; position: relative; }
+.page-how-it-works .journey-step-item h3 { font-size: 2.6rem; }
+.page-how-it-works .journey-step-item::before { content: ''; width: 12px; height: 12px; border: 1px solid var(--brand-forest); border-radius: 50%; position: absolute; left: 10px; top: 48px; }
+.page-how-it-works .journey-step-item::after { content: ''; position: absolute; left: 16px; top: 70px; bottom: 0; width: 1px; background: var(--border-forest); }
+.page-contact .form-card-container { margin-top: 0; padding: clamp(28px,6vw,80px); }
+.page-contact .form-section-title { font-family: var(--font-display); font-size: 2rem; text-transform: none; font-weight: 400; letter-spacing: -.02em; }
+.page-contact .form-grid-2col { gap: 28px; }
+.page-contact .form-input,.page-contact .form-select,.page-contact .form-textarea { border-width: 0 0 1px; padding-inline: 0; background: transparent; }
+.page-contact > section:nth-of-type(3) { padding-top: 40px; background: var(--bg-primary); }
+.page-contact .form-card-container { background: var(--bg-secondary); }
+.regions-heading { max-width: 850px; margin-bottom: 50px; }
+.region-collection { display: grid; grid-template-columns: 1.15fr .85fr; gap: 80px 60px; align-items: start; }
+.region-story:nth-child(even) { margin-top: 130px; }
+.region-photo { height: 460px; position: relative; overflow: hidden; }
+.region-story:nth-child(even) .region-photo { height: 350px; }
+.region-photo img { object-fit: cover; transition: transform 900ms var(--ease-cinematic); }
+.region-story:hover img { transform: scale(1.035); }
+.region-caption { padding-top: 24px; }
+.region-caption > span { font-size: .67rem; color: var(--text-secondary); }
+.region-caption h3 { font-size: clamp(2.8rem,4vw,4.5rem); margin-block: 12px; }
+.region-caption > p { font-size: .87rem; max-width: 53ch; }
+.region-industries { padding-block: 18px; color: var(--brand-forest); }
+.industry-directory { background: var(--bg-secondary); }
+.directory-intro { max-width: 800px; margin-bottom: 50px; }
+.industry-entry { border-top: 1px solid var(--border-forest); }
+.industry-entry summary { list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 24px; font-family: var(--font-display); font-size: clamp(1.8rem,3vw,3rem); padding-block: 24px; cursor: pointer; }
+.industry-entry summary::-webkit-details-marker { display: none; }
+.industry-entry[open] summary > span:last-child { transform: rotate(45deg); }
+.industry-expanded { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; padding-bottom: 40px; }
+.industry-photo { position: relative; height: 320px; overflow: hidden; }
+.industry-photo img { object-fit: cover; }
+.industry-roles { margin-block: 24px; font-size: .85rem; color: var(--text-secondary); }
+#cv-builder { background: var(--champagne); }
+#cv-builder > .container > div:first-child { text-align: left !important; margin-left: 0 !important; max-width: 900px !important; }
+#cv-builder > .container > div:nth-child(2) { max-width: none !important; box-shadow: none !important; border: 0 !important; border-top: 3px solid var(--brand-forest) !important; border-radius: 0 !important; }
+#cv-builder .form-input,#cv-builder .form-select { background: var(--bg-primary); border-width: 0 0 1px; }
+/* Purposeful interaction; no infinite movement or scroll blocking. */
+@media(prefers-reduced-motion: no-preference) {
+ .collection-heading h1 { animation: editorial-enter 950ms cubic-bezier(.16,1,.3,1) both; }
+ .collection-chapter { animation: editorial-enter 700ms cubic-bezier(.16,1,.3,1) both; }
+ .collection-introduction { animation: editorial-enter 1000ms 80ms cubic-bezier(.16,1,.3,1) both; }
+ .service-chapter[open] .service-chapter-body,.industry-entry[open] .industry-expanded { animation: editorial-enter 550ms cubic-bezier(.16,1,.3,1) both; }
+ @keyframes editorial-enter { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+}
+@media(max-width:1000px) {
+ .collection-introduction { align-items: flex-start; flex-direction: column; gap: 24px; }
+ .collection-opening--invitation .collection-media { right: 5%; width: 150px; height: 200px; }
+ .collection-opening--invitation h1 { max-width: 10ch; }
+ .service-roles { grid-template-columns: repeat(2,minmax(0,1fr)); }
+}
+@media(max-width:800px) {
+ .collection-opening { padding-top: calc(var(--header-height) + 36px); }
+ .collection-chapter { margin-bottom: 28px; }
+ .collection-heading h1 { font-size: clamp(3.2rem,11vw,5.5rem); }
+ .collection-introduction > p { font-size: .95rem; }
+ .collection-media { height: 380px; margin-top: 32px; }
+ .collection-opening--portrait .collection-introduction { max-width: 100%; padding-bottom: 0; }
+ .collection-opening--portrait .collection-heading h1 { font-size: clamp(3.7rem,13vw,6rem); }
+ .collection-opening--portrait .collection-media { position: relative; top: auto; right: auto; bottom: auto; width: auto; height: 480px; margin: 40px var(--gutter) 0; }
+ .collection-opening--manifesto .collection-media { margin-inline: var(--gutter); height: 360px; }
+ .collection-opening--invitation .collection-media { position: relative; width: auto; height: 240px; right: auto; top: auto; margin: 0 var(--gutter) 20px; transform: none; }
+ .collection-endnote { font-size: .6rem; }
+ .service-chapter summary { grid-template-columns: 1fr 32px; gap: 12px; }
+ .service-chapter summary > span:first-child { grid-column: 1 / -1; }
+ .service-chapter summary h3 { font-size: 2rem; }
+ .service-description { flex-direction: column; gap: 20px; }
+ .page-workforce .collection-entry { display: block; }
+ .page-workforce .collection-entry .role-media-col { height: 380px; min-height: 0 !important; }
+ .page-destinations .collection-entry .role-media-col { height: 390px; }
+ .page-destinations .collection-entry .role-text-col { width: 95%; margin-top: -60px; }
+ .page-about .trust-pillar-card { display: block; }
+ .page-about .trust-pillar-card h3 { margin-block: 16px !important; }
+ .page-how-it-works .journey-step-item { padding-left: 40px !important; }
+ .region-collection { grid-template-columns: 1fr; gap: 48px; }
+ .region-story:nth-child(even) { margin-top: 0; }
+ .region-photo,.region-story:nth-child(even) .region-photo { height: 340px; }
+ .industry-expanded { grid-template-columns: 1fr; gap: 24px; }
+ .industry-expanded .btn { white-space: normal; text-align: left; }
+}
+@media(max-width:480px) { .service-roles { grid-template-columns: 1fr; } .collection-actions { gap: 14px; } .collection-actions .btn { white-space: normal; text-align: left; } }
+/* Homepage narrative: open statement, gallery, operational panorama, guided process. */
+.human-moment-grid { display: flex; flex-direction: column; gap: 44px; align-items: center; text-align: center; }
+.human-moment-text { max-width: 850px; }
+.human-moment-text .lead-text { margin-inline: auto; }
+.moment-image-wrapper { width: min(100%,1080px); height: 520px; }
+.human-corridor-grid { margin-top: 70px; }
+.reality-split-layout { display: block; }
+.reality-split-layout > div:first-child { max-width: 850px; margin-bottom: 40px; }
+.reality-image-wrapper { height: 520px; }
+.climax-statement-section h2 { text-transform: none; font-size: clamp(3rem,6vw,6rem); }
+@media(max-width:768px) { .moment-image-wrapper,.reality-image-wrapper { height: 360px; } }
+:is(.page-about,.page-solutions,.page-destinations,.page-how-it-works) > .climax-statement-section { padding-block: 64px; background: var(--champagne); color: var(--brand-forest-deep); }
+:is(.page-about,.page-solutions,.page-destinations,.page-how-it-works) > .climax-statement-section :is(h2,p,.label-editorial) { color: var(--brand-forest-deep) !important; }
+:is(.page-about,.page-solutions,.page-destinations,.page-how-it-works) > .climax-statement-section h2 { font-size: clamp(2.3rem,4vw,4rem); }
+:is(.page-about,.page-solutions,.page-destinations,.page-how-it-works) > .climax-statement-section .btn { background: var(--brand-forest); color: var(--bg-primary); border-color: var(--brand-forest); }

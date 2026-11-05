@@ -1,5 +1,5 @@
 /**
- * Vantara Global Recruitment - Constants & Reference Content
+ * Viaferra Global Recruitment - Constants & Reference Content
  * A venture of Ascentra Global Ltd
  */
 
@@ -18,7 +18,7 @@ export const TARGET_REGIONS: DestinationCardData[] = [
     region: 'Europe',
     tagline: 'Industrial, Logistics & Hospitality Hubs',
     copy: 'Explore potential opportunities across industrial, construction, logistics and hospitality sectors.',
-    industries: ['Construction & Infrastructure', 'Manufacturing & Factories', 'Logistics & Warehousing', 'Hospitality & Tourism'],
+    industries: ['Construction & Infrastructure', 'Manufacturing & Industrial', 'Logistics & Warehousing', 'Hospitality & Tourism'],
     image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80',
     alt: 'Modern European commercial architecture and urban infrastructure',
     focusAreas: 'Western & Central European production centers, Nordic logistics corridors, and Mediterranean hospitality operations.'
@@ -28,9 +28,9 @@ export const TARGET_REGIONS: DestinationCardData[] = [
     region: 'Latin America',
     tagline: 'Manufacturing, Energy & Agribusiness Corridors',
     copy: 'Register your interest in international workforce opportunities across a diverse range of industries.',
-    industries: ['Manufacturing & Factories', 'Agriculture & General Services', 'Construction & Infrastructure', 'Technical & Skilled Trades'],
-    image: 'https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1200&q=80',
-    alt: 'Vibrant Latin American metropolitan infrastructure and logistics network',
+    industries: ['Manufacturing & Industrial', 'Agriculture & Essential Services', 'Construction & Infrastructure', 'Technical & Skilled Trades'],
+    image: '/images/custom/region-latin-america.jpg',
+    alt: 'Rio de Janeiro, Brazil, overlooking the bay',
     focusAreas: 'Industrial assembly corridors, civil engineering projects, commercial agriculture, and regional transport infrastructure.'
   },
   {
@@ -38,9 +38,9 @@ export const TARGET_REGIONS: DestinationCardData[] = [
     region: 'Australia',
     tagline: 'Skilled Trades, Civil Infrastructure & Primary Production',
     copy: 'Submit your professional profile for consideration where suitable employer requirements and eligibility conditions apply.',
-    industries: ['Technical & Skilled Trades', 'Construction & Infrastructure', 'Agriculture & General Services', 'Hospitality & Tourism'],
-    image: 'https://images.unsplash.com/photo-1506973035872-a4ec16b8e8d9?auto=format&fit=crop&w=1200&q=80',
-    alt: 'Australian architectural skyline and coastal civil infrastructure',
+    industries: ['Technical & Skilled Trades', 'Construction & Infrastructure', 'Agriculture & Essential Services', 'Hospitality & Tourism'],
+    image: '/images/custom/region-australia.jpg',
+    alt: 'Sydney Opera House beside the harbour',
     focusAreas: 'Licensed electrical and mechanical trades, civil construction, commercial agribusiness, and luxury resort hospitality.'
   },
   {
@@ -48,9 +48,9 @@ export const TARGET_REGIONS: DestinationCardData[] = [
     region: 'New Zealand',
     tagline: 'Construction Trades, Primary Industries & Tourism',
     copy: 'Connect your qualifications and experience with potential recruitment opportunities based on relevant employer demand.',
-    industries: ['Construction & Infrastructure', 'Agriculture & General Services', 'Hospitality & Tourism', 'Technical & Skilled Trades'],
-    image: 'https://images.unsplash.com/photo-1507699622108-4be3abd695ad?auto=format&fit=crop&w=1200&q=80',
-    alt: 'New Zealand alpine landscape and sustainable infrastructure',
+    industries: ['Construction & Infrastructure', 'Agriculture & Essential Services', 'Hospitality & Tourism', 'Technical & Skilled Trades'],
+    image: '/images/custom/region-new-zealand.jpg',
+    alt: 'Snow-covered mountains in Fiordland, New Zealand',
     focusAreas: 'Specialist construction trades, viticulture and dairy processing, electromechanical maintenance, and tourism operations.'
   }
 ];
@@ -61,15 +61,15 @@ export const RECRUITMENT_INDUSTRIES: IndustryCardData[] = [
     name: 'Construction & Infrastructure',
     description: 'Modern commercial, civil, and residential projects demanding technical craft, precision, and strict safety adherence.',
     exampleRoles: ['Electricians', 'Plumbers', 'Welders', 'Masons', 'Carpenters', 'General Workers'],
-    image: 'https://images.unsplash.com/photo-1541888946425-d0fbb1861564?auto=format&fit=crop&w=1000&q=80',
-    alt: 'Professional construction team on modern civil engineering development'
+    image: '/images/journal/workforce.jpg',
+    alt: 'Construction professionals discussing work on site'
   },
   {
     id: 'manufacturing',
-    name: 'Manufacturing & Factories',
+    name: 'Manufacturing & Industrial',
     description: 'High-precision assembly, food & beverage processing, industrial packaging lines, and component fabrication.',
     exampleRoles: ['Production Workers', 'Machine Operators', 'Packaging Assistants', 'Factory Technicians'],
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=1000&q=80',
+    image: '/images/journal/manufacturing.jpg',
     alt: 'Advanced industrial production facility and assembly line operations'
   },
   {
@@ -77,7 +77,7 @@ export const RECRUITMENT_INDUSTRIES: IndustryCardData[] = [
     name: 'Logistics & Warehousing',
     description: 'Modern fulfillment facilities, cross-dock terminals, cold-chain distribution, and freight management.',
     exampleRoles: ['Warehouse Workers', 'Forklift Operators', 'Inventory Assistants', 'Logistics Personnel'],
-    image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1000&q=80',
+    image: '/images/journal/logistics.jpg',
     alt: 'Automated warehouse distribution center and logistics management'
   },
   {
@@ -85,24 +85,24 @@ export const RECRUITMENT_INDUSTRIES: IndustryCardData[] = [
     name: 'Hospitality & Tourism',
     description: 'Luxury hotels, island resorts, commercial kitchens, beachfront dining, and high-touch guest relations.',
     exampleRoles: ['Chefs & Cooks', 'Housekeeping Workers', 'Restaurant Staff', 'Maintenance Stewards'],
-    image: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1000&q=80',
-    alt: 'Professional culinary and hospitality service team in luxury venue'
+    image: '/images/custom/kitchen-brigade.jpg',
+    alt: 'Chef preparing food in a professional kitchen'
   },
   {
     id: 'agriculture',
-    name: 'Agriculture & General Services',
+    name: 'Agriculture & Essential Services',
     description: 'Commercial greenhouse cultivation, harvesting operations, livestock support, and property groundskeeping.',
     exampleRoles: ['Farm Workers', 'Agricultural Support Staff', 'Harvesting Staff', 'Grounds Attendants'],
-    image: 'https://images.unsplash.com/photo-1592982537447-7440770cbfc9?auto=format&fit=crop&w=1000&q=80',
-    alt: 'Commercial sustainable agricultural operations and harvesting'
+    image: '/images/journal/agriculture.jpg',
+    alt: 'Agricultural workers harvesting in a field'
   },
   {
     id: 'technical',
     name: 'Technical & Skilled Trades',
     description: 'Industrial maintenance, electromechanical systems, climate control installations, and automotive care.',
     exampleRoles: ['HVAC Technicians', 'Mechanics', 'Electrical Technicians', 'Industrial Maintenance Workers'],
-    image: 'https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1000&q=80',
-    alt: 'Certified electrical and technical maintenance specialist at work'
+    image: '/images/journal/technical.jpg',
+    alt: 'Electrical worker installing a wall fitting'
   }
 ];
 
@@ -185,8 +185,8 @@ export const RECRUITMENT_PROCESS_STEPS: ProcessStepData[] = [
   {
     stepNumber: '04',
     stepLabel: 'STEP 04',
-    title: 'Submit to Vantara Recruitment',
-    description: 'Securely submit your verified profile to the Vantara international recruitment database. Your information is protected under UK GDPR standards.'
+    title: 'Submit to Viaferra Recruitment',
+    description: 'Submit your professional profile to the recruitment team for review. Registration does not guarantee a placement.'
   },
   {
     stepNumber: '05',
@@ -198,8 +198,8 @@ export const RECRUITMENT_PROCESS_STEPS: ProcessStepData[] = [
 
 export const RECRUITMENT_FAQS: FAQItemData[] = [
   {
-    question: 'What is Vantara Global Recruitment?',
-    answer: 'Vantara Global Recruitment is an international workforce coordination service operated under Ascentra Global Ltd. We connect employers in key global markets with vetted candidates across skilled, semi-skilled, and entry-level positions in essential industries.'
+    question: 'What is Viaferra Global Recruitment?',
+    answer: 'Viaferra Global Recruitment is an international workforce coordination service operated under Ascentra Global Ltd. We connect employers in key global markets with vetted candidates across skilled, semi-skilled, and entry-level positions in essential industries.'
   },
   {
     question: 'Who can register?',
@@ -227,15 +227,15 @@ export const RECRUITMENT_FAQS: FAQItemData[] = [
   },
   {
     question: 'What happens after submission?',
-    answer: 'Your submission is logged in our recruitment database and routed to our international coordination team. When an employer requirement matching your skill category and destination preference is confirmed, a coordinator will reach out to schedule an interview.'
+    answer: 'Your submitted details are emailed to our recruitment coordination team for review. When an employer requirement matching your skill category and destination preference is confirmed, a coordinator will reach out to schedule an interview.'
   },
   {
     question: 'Does registering guarantee employment?',
-    answer: 'No. Registering creates your professional candidate profile in our recruitment database. Placements depend entirely on confirmed employer job orders, candidate suitability, successful employer interviews, and lawful visa/work permit issuance.'
+    answer: 'No. Registering sends your professional profile to our recruitment team. Placements depend entirely on confirmed employer job orders, candidate suitability, successful employer interviews, and lawful visa/work permit issuance.'
   },
   {
     question: 'How will my personal information be used?',
-    answer: 'Your data is handled securely under strict data protection principles (including UK GDPR). It is used solely to evaluate your profile for relevant employment opportunities and to coordinate recruitment with authorized employers. We never sell your data, and we charge zero recruitment fees to candidates.'
+    answer: 'The details you submit are emailed to our recruitment team to assess relevant opportunities and coordinate recruitment. Do not include passport numbers or sensitive identity documents. You can contact the team about your submitted information.'
   }
 ];
 

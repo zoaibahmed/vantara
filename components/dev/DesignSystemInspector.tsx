@@ -7,12 +7,8 @@ export default function DesignSystemInspector() {
   const [isDev, setIsDev] = useState(false);
 
   useEffect(() => {
-    // Only show in development or with ?ds=true / ?dev=true flag
-    const isDevEnv = process.env.NODE_ENV === 'development' ||
-                     (typeof window !== 'undefined' && (
-                       window.location.search.includes('ds=true') ||
-                       window.location.search.includes('dev=true')
-                     ));
+    // Keep the inspector opt-in and local to development.
+    const isDevEnv = process.env.NODE_ENV === 'development' && new URLSearchParams(window.location.search).get('ds') === 'true';
     setIsDev(isDevEnv);
 
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -45,7 +41,7 @@ export default function DesignSystemInspector() {
           <div className="ds-modal-card">
             <div className="ds-modal-header">
               <div>
-                <h3 className="ds-modal-title">Vantara Design System — Token Spec</h3>
+                <h3 className="ds-modal-title">Viaferra Design System — Token Spec</h3>
                 <div className="ds-modal-subtitle">Phase 4 Next.js + React Architecture • Warm Ivory & Forest Green</div>
               </div>
               <button className="ds-modal-close" onClick={() => setIsOpen(false)} aria-label="Close">&times;</button>

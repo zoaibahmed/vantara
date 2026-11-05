@@ -1,5 +1,5 @@
 /* ==========================================================================
-   VANTARA WORKFORCE SOLUTIONS | GLOBALS
+   VIAFERRA WORKFORCE SOLUTIONS | GLOBALS
    A venture of Ascentra Global Ltd
    ========================================================================== */
 
@@ -10,6 +10,11 @@
 @import './footer.css';
 @import './design-system.css';
 @import './editorial.css';
+@import './cinematic.css';
+@import './collection.css';
+@import './journal.css';
+@import './inner-journal.css';
+@import './forms-refined.css';
 
 *, *::before, *::after {
   box-sizing: border-box;

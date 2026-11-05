@@ -1,5 +1,5 @@
 /**
- * Vantara Global Recruitment - Domain Schema & Interfaces
+ * Viaferra Global Recruitment - Domain Schema & Interfaces
  * A venture of Ascentra Global Ltd
  */
 

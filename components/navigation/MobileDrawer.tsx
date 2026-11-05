@@ -29,13 +29,14 @@ export default function MobileDrawer({ isOpen, onClose, onOpenWorkerModal }: Mob
     <dialog ref={dialog} id="mobile-navigation" className="mobile-nav-drawer" aria-labelledby="mobile-menu-title" onCancel={event => { event.preventDefault(); onClose(); }} onClick={event => { if (event.target === event.currentTarget) onClose(); }}>
       <div className="mobile-drawer-inner" data-lenis-prevent>
         <div className="mobile-drawer-header"><Brand /><button type="button" className="mobile-close-btn" onClick={onClose} aria-label="Close navigation menu">×</button></div>
-        <p className="mobile-menu-label" id="mobile-menu-title">Explore Vantara</p>
+        <p className="mobile-menu-label" id="mobile-menu-title">Explore Viaferra</p>
         <nav aria-label="Mobile navigation"><ul className="mobile-nav-links">{navigationLinks.map(link => (
           <li key={link.href}><Link href={link.href} onClick={onClose} aria-current={pathname === link.href ? 'page' : undefined}><span>{link.label}</span><span aria-hidden="true">↗</span></Link></li>
         ))}</ul></nav>
         <div className="mobile-drawer-actions">
           <Link href="/contact" className="btn btn-inverse-primary" onClick={onClose}>Request Workforce <span aria-hidden="true">↗</span></Link>
-          <button type="button" className="mobile-candidate-link" onClick={onOpenWorkerModal}>Join Our Workforce</button>
+          <Link className="mobile-candidate-link" href="/global-recruitment#cv-builder" onClick={onClose}>Build Your CV</Link>
+          <button type="button" className="mobile-candidate-link" onClick={onOpenWorkerModal}>Hospitality candidate registration</button>
           <p>A venture of Ascentra Global Ltd</p>
         </div>
       </div>

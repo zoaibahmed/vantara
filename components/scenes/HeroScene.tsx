@@ -1,76 +1,53 @@
 'use client';
 
-import React from 'react';
+import { useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { useMotionPreference } from '@/components/animations/useMotionPreference';
 
 export default function HeroScene() {
+  const hero = useRef<HTMLElement>(null);
+  const reduced = useMotionPreference();
+  const { scrollYProgress } = useScroll({ target: hero, offset: ['start start', 'end start'] });
+  const photoOffset = useTransform(scrollYProgress, [0, .75], [0, 45]);
+
   return (
-    <section className="hero-editorial scene-container home-hero" id="hero">
-      <div className="container-wide">
-        <div className="hero-grid">
-          
-          {/* Left: Headline & Editorial Narrative */}
-          <motion.div
-            className="hero-content"
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.85, ease: [0.16, 1, 0.3, 1] }}
-          >
-            <span className="label-editorial">International hospitality workforce</span>
-            
-            <h1 className="display-hero" style={{ margin: 'var(--space-4) 0 var(--space-5)' }}>
-              Your Hospitality<br />
-              Workforce.<br />
-              Coordinated.
+    <section ref={hero} className="journal-hero" id="hero" aria-labelledby="global-title">
+      <div className="container-wide journal-hero-inner">
+        <div className="hero-edition">
+          <span>Viaferra / Global recruitment</span>
+          <span>A venture of Ascentra Global Ltd</span>
+        </div>
+        <div className="journal-hero-composition">
+          <div className="journal-hero-photo">
+            <motion.div className="journal-hero-photo-inner" style={{ y: reduced ? 0 : photoOffset }}>
+              <Image src="/images/journal/workforce.jpg" alt="Construction professionals discussing work on site"
+                fill priority sizes="(max-width: 800px) 100vw, 70vw" />
+            </motion.div>
+            <span className="hero-photo-caption">The people behind essential work.</span>
+          </div>
+          <div className="journal-hero-copy">
+            <h1 id="global-title">
+              <span className="hero-line-mask"><span>Global talent.</span></span>{' '}
+              <span className="hero-line-mask"><span>Without borders.</span></span>
             </h1>
-            
-            <p className="lead-text max-w-prose" style={{ marginBottom: 'var(--space-8)' }}>
-              Vantara helps tourism businesses access international hospitality professionals and coordinate the workforce they need.
-            </p>
-
-            <div className="flex items-center gap-4" style={{ flexWrap: 'wrap' }}>
-              <Link href="/contact" className="btn btn-primary btn-lg">
-                <span>Request Workforce</span>
-                <span className="btn-arrow" aria-hidden="true">→</span>
-              </Link>
-              <Link href="/how-it-works" className="btn btn-secondary btn-lg">
-                <span>How It Works</span>
-              </Link>
+            <div className="hero-support">
+              <p>International recruitment and workforce solutions connecting employers with skilled, semi-skilled and entry-level talent across essential industries.</p>
+              <div className="hero-actions">
+                <Link href="/contact" className="btn btn-inverse-primary">
+                  Request Workforce <span aria-hidden="true">↗</span>
+                </Link>
+                <Link href="/global-recruitment#cv-builder" className="hero-candidate-link">
+                  Build Your CV <span aria-hidden="true">↗</span>
+                </Link>
+              </div>
             </div>
-
-            <div style={{ marginTop: 'var(--space-8)', display: 'flex', alignItems: 'center', gap: 'var(--space-4)' }}>
-              <span className="caption" style={{ color: 'var(--text-muted)', fontSize: '0.8125rem', letterSpacing: '0.04em' }}>
-                A venture of <strong>Ascentra Global Ltd</strong>
-              </span>
-              <span style={{ color: 'var(--border-warm)' }}>•</span>
-              <span className="caption" style={{ color: 'var(--brand-forest)', fontWeight: 600, fontSize: '0.8125rem' }}>
-                Direct Employer Partnership
-              </span>
-            </div>
-          </motion.div>
-
-          {/* Right: Dedicated Hospitality Professionals in Uniform */}
-          <motion.div
-            className="hero-media-wrapper"
-            initial={{ opacity: 0, scale: 0.96 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.15 }}
-          >
-            <Image
-              src="/images/custom/hero-new.jpg"
-              alt="Hospitality leadership and workforce coordination professionals"
-              fill
-              priority
-              sizes="(max-width: 768px) 100vw, 50vw"
-              className="hero-image"
-            />
-            <div className="hero-media-caption">
-              <span>The people behind exceptional hospitality.</span>
-            </div>
-          </motion.div>
-
+          </div>
+        </div>
+        <div className="hero-bottom-line">
+          <span>People. Skills. Possibility.</span>
+          <a href="#industries-section">Discover our industries <span aria-hidden="true">↓</span></a>
         </div>
       </div>
     </section>

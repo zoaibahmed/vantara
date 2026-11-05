@@ -27,14 +27,14 @@ export default function OperationalRealityScene() {
             transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
           >
             <span className="label-editorial label-neutral">The Operational Reality</span>
-            <h2 className="display-1" style={{ margin: 'var(--space-2) 0 var(--space-4)', textTransform: 'uppercase' }}>
+            <h2 className="display-1" style={{ margin: 'var(--space-2) 0 var(--space-4)', textTransform: 'none' }}>
               Running a Hospitality Operation<br />Is Already Complex.
             </h2>
             <p className="lead-text" style={{ marginBottom: 'var(--space-4)' }}>
               Managing daily guest satisfaction, seasonal occupancy surges, and resort logistics demands your full attention. Finding and coordinating an international workforce should not become another operational burden.
             </p>
             <p style={{ color: 'rgba(250, 248, 245, 0.75)' }}>
-              Vantara takes on the multi-country logistics, credential verification, and administrative coordination—so your property receives ready-to-work professionals tailored to your standards.
+              Viaferra takes on the multi-country logistics, credential verification, and administrative coordination—so your property receives ready-to-work professionals tailored to your standards.
             </p>
           </motion.div>
 
@@ -47,7 +47,7 @@ export default function OperationalRealityScene() {
           >
             <div className="reality-image-wrapper">
               <Image
-                src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1000&q=80"
+                src="/images/custom/resort-panorama.jpg"
                 alt="Guests arriving at luxury hotel with uniformed front desk staff welcoming and checking them in"
                 fill
                 sizes="(max-width: 768px) 100vw, 45vw"

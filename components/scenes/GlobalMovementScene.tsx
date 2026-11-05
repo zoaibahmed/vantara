@@ -12,7 +12,7 @@ const corridorStories = [
     origin: 'Bangladesh',
     destination: 'Maldives',
     action: 'Executive Chef & Brigade Line Prep',
-    image: 'https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=800&q=80',
+    image: '/images/custom/culinary-service.jpg',
     alt: 'Executive chef in white jacket carefully plating a gourmet seafood dish',
     desc: 'Trained line chefs and kitchen leads bringing rigorous food safety and high-volume culinary excellence to private island resorts.'
   },
@@ -54,7 +54,7 @@ export default function GlobalMovementScene() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
               <span className="label-editorial">People Behind the Standard</span>
-              <h2 className="display-1" style={{ margin: 'var(--space-2) 0 var(--space-4)', textTransform: 'uppercase' }}>
+              <h2 className="display-1" style={{ margin: 'var(--space-2) 0 var(--space-4)', textTransform: 'none' }}>
                 Great Hospitality<br />
                 <em>Starts With People.</em>
               </h2>
@@ -62,7 +62,7 @@ export default function GlobalMovementScene() {
                 Behind every seamless guest experience—from the first morning pastry to the evening turndown—are dedicated hospitality professionals who make operations thrive.
               </p>
               <p style={{ color: 'var(--text-muted)' }}>
-                Vantara connects high-demand tourism properties directly with skilled hospitality talent across international workforce corridors.
+                Viaferra connects high-demand tourism properties directly with skilled hospitality talent across international workforce corridors.
               </p>
             </motion.div>
 
@@ -99,7 +99,7 @@ export default function GlobalMovementScene() {
             style={{ marginBottom: 'var(--space-8)', textAlign: 'center' }}
           >
             <span className="label-editorial">Human-First Workforce Corridors</span>
-            <h3 className="display-2" style={{ textTransform: 'uppercase', marginTop: 'var(--space-2)' }}>
+            <h3 className="display-2" style={{ textTransform: 'none', marginTop: 'var(--space-2)' }}>
               From Source Talent To Destination Excellence
             </h3>
           </motion.div>

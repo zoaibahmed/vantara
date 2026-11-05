@@ -28,14 +28,18 @@ export default function EmployerRequestForm({ onOpenWorkerModal }: EmployerReque
   const [feedback, setFeedback] = useState<string | null>(null);
   const [isSuccess, setIsSuccess] = useState<boolean | null>(null);
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (isSubmitting) return;
+    const submittedForm = e.currentTarget;
+    setFeedback(null);
     setIsSubmitting(true);
     const res = await submitEmployerRequest(formData);
     setIsSubmitting(false);
     setIsSuccess(res.success);
     setFeedback(res.message);
     if (res.success) {
+      submittedForm.reset();
       setFormData({
         companyName: '',
         businessType: '',
@@ -61,12 +65,12 @@ export default function EmployerRequestForm({ onOpenWorkerModal }: EmployerReque
         <div className="form-section-title">1. Your Business</div>
         <div className="form-grid-2col">
           <div className="form-group">
-            <label htmlFor="companyName" className="form-label">Property / Company Name *</label>
+            <label htmlFor="companyName" className="form-label">Company / Organisation Name *</label>
             <input
-              type="text"
-              id="companyName"
+              type="text" maxLength={200}
+              id="companyName" name="companyName" autoComplete="name"
               className="form-input"
-              placeholder="e.g. Coral Reef Luxury Resort"
+              placeholder="Your company name"
               value={formData.companyName}
               onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
               required
@@ -75,18 +79,23 @@ export default function EmployerRequestForm({ onOpenWorkerModal }: EmployerReque
           <div className="form-group">
             <label htmlFor="businessType" className="form-label">Business Type *</label>
             <select
-              id="businessType"
+              id="businessType" name="businessType"
               className="form-select"
               value={formData.businessType}
               onChange={(e) => setFormData({ ...formData, businessType: e.target.value })}
               required
             >
-              <option value="">Select hospitality category...</option>
+              <option value="">Select business sector…</option>
+              <option value="construction">Construction & Infrastructure</option>
+              <option value="manufacturing">Manufacturing & Industrial</option>
+              <option value="logistics">Logistics & Warehousing</option>
+              <option value="agriculture">Agriculture & Essential Services</option>
+              <option value="technical">Technical & Skilled Trades</option>
               <option value="luxury-resort">Luxury Resort / Island Property</option>
               <option value="hotel">City / Boutique Hotel</option>
               <option value="restaurant-fnb">Restaurant / F&B Group</option>
               <option value="catering-events">Events & Catering Operator</option>
-              <option value="other">Other Hospitality Enterprise</option>
+              <option value="other">Other Business</option>
             </select>
           </div>
         </div>
@@ -95,10 +104,10 @@ export default function EmployerRequestForm({ onOpenWorkerModal }: EmployerReque
           <div className="form-group">
             <label htmlFor="operatingCountry" className="form-label">Destination Country / Location *</label>
             <input
-              type="text"
-              id="operatingCountry"
+              type="text" maxLength={200}
+              id="operatingCountry" name="operatingCountry" autoComplete="country-name"
               className="form-input"
-              placeholder="e.g. Seychelles, Maldives, Belize"
+              placeholder="Country and city of operation"
               value={formData.operatingCountry}
               onChange={(e) => setFormData({ ...formData, operatingCountry: e.target.value })}
               required
@@ -107,8 +116,8 @@ export default function EmployerRequestForm({ onOpenWorkerModal }: EmployerReque
           <div className="form-group">
             <label htmlFor="companyWebsite" className="form-label">Website (Optional)</label>
             <input
-              type="url"
-              id="companyWebsite"
+              type="url" maxLength={500}
+              id="companyWebsite" name="companyWebsite"
               className="form-input"
               placeholder="https://"
               value={formData.companyWebsite}
@@ -123,10 +132,10 @@ export default function EmployerRequestForm({ onOpenWorkerModal }: EmployerReque
           <div className="form-group">
             <label htmlFor="rolesRequired" className="form-label">Roles Required *</label>
             <input
-              type="text"
-              id="rolesRequired"
+              type="text" maxLength={200}
+              id="rolesRequired" name="rolesRequired"
               className="form-input"
-              placeholder="e.g. 10 Housekeepers, 5 Commis Chefs, 4 Waitstaff"
+              placeholder="e.g. 5 welders, 10 warehouse operatives"
               value={formData.rolesRequired}
               onChange={(e) => setFormData({ ...formData, rolesRequired: e.target.value })}
               required
@@ -135,8 +144,8 @@ export default function EmployerRequestForm({ onOpenWorkerModal }: EmployerReque
           <div className="form-group">
             <label htmlFor="workersCount" className="form-label">Number of Workers *</label>
             <input
-              type="text"
-              id="workersCount"
+              type="text" maxLength={200}
+              id="workersCount" name="workersCount"
               className="form-input"
               placeholder="e.g. 15-20 workers"
               value={formData.workersCount}
@@ -150,10 +159,10 @@ export default function EmployerRequestForm({ onOpenWorkerModal }: EmployerReque
           <div className="form-group">
             <label htmlFor="startDate" className="form-label">Required Start Date *</label>
             <input
-              type="text"
-              id="startDate"
+              type="text" maxLength={200}
+              id="startDate" name="startDate"
               className="form-input"
-              placeholder="e.g. Q3 2026 / October"
+              placeholder="e.g. March 2027"
               value={formData.startDate}
               onChange={(e) => setFormData({ ...formData, startDate: e.target.value })}
               required
@@ -162,7 +171,7 @@ export default function EmployerRequestForm({ onOpenWorkerModal }: EmployerReque
           <div className="form-group">
             <label htmlFor="contractDuration" className="form-label">Contract Duration *</label>
             <select
-              id="contractDuration"
+              id="contractDuration" name="contractDuration"
               className="form-select"
               value={formData.contractDuration}
               onChange={(e) => setFormData({ ...formData, contractDuration: e.target.value })}
@@ -182,8 +191,8 @@ export default function EmployerRequestForm({ onOpenWorkerModal }: EmployerReque
           <div className="form-group">
             <label htmlFor="contactName" className="form-label">Contact Name *</label>
             <input
-              type="text"
-              id="contactName"
+              type="text" maxLength={200}
+              id="contactName" name="contactName" autoComplete="name"
               className="form-input"
               placeholder="Full name"
               value={formData.contactName}
@@ -194,8 +203,8 @@ export default function EmployerRequestForm({ onOpenWorkerModal }: EmployerReque
           <div className="form-group">
             <label htmlFor="contactEmail" className="form-label">Work Email *</label>
             <input
-              type="email"
-              id="contactEmail"
+              type="email" maxLength={254} spellCheck={false}
+              id="contactEmail" name="contactEmail" autoComplete="email"
               className="form-input"
               placeholder="name@property.com"
               value={formData.contactEmail}
@@ -206,8 +215,8 @@ export default function EmployerRequestForm({ onOpenWorkerModal }: EmployerReque
           <div className="form-group">
             <label htmlFor="contactPhone" className="form-label">Phone / WhatsApp *</label>
             <input
-              type="tel"
-              id="contactPhone"
+              type="tel" maxLength={60}
+              id="contactPhone" name="contactPhone" autoComplete="tel"
               className="form-input"
               placeholder="+123 456 789"
               value={formData.contactPhone}
@@ -221,10 +230,10 @@ export default function EmployerRequestForm({ onOpenWorkerModal }: EmployerReque
         <div className="form-section-title">4. Additional Information</div>
         <div className="form-group">
           <label htmlFor="additionalNotes" className="form-label">Requirements / Message</label>
-          <textarea
-            id="additionalNotes"
+          <textarea maxLength={4000}
+            id="additionalNotes" name="additionalNotes"
             className="form-textarea"
-            placeholder="Detail any language requirements, on-site accommodation arrangements, or specific culinary certifications..."
+            placeholder="Tell us about qualifications, language needs, accommodation or other role requirements…"
             value={formData.additionalNotes}
             onChange={(e) => setFormData({ ...formData, additionalNotes: e.target.value })}
           />
@@ -250,7 +259,7 @@ export default function EmployerRequestForm({ onOpenWorkerModal }: EmployerReque
         </div>
 
         {feedback && (
-          <div
+          <div role={isSuccess ? "status" : "alert"} aria-live="polite"
             style={{
               marginTop: 'var(--space-4)',
               padding: 'var(--space-4)',
@@ -261,12 +270,12 @@ export default function EmployerRequestForm({ onOpenWorkerModal }: EmployerReque
               fontSize: '0.875rem'
             }}
           >
-            <strong>{isSuccess ? 'Thank you for contacting Vantara.' : 'Notice:'}</strong> {feedback}
+            <strong>{isSuccess ? 'Thank you for contacting Viaferra.' : 'Notice:'}</strong> {feedback}
           </div>
         )}
 
         <p className="form-privacy-note">
-          Vantara Workforce Solutions respects your privacy. All information submitted is held strictly confidential for employer workforce coordination under Ascentra Global Ltd.
+          Your enquiry is sent to the Viaferra recruitment team for workforce coordination. Viaferra is a venture of Ascentra Global Ltd.
         </p>
 
       </form>

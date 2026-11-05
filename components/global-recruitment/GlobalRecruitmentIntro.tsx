@@ -32,14 +32,14 @@ export default function GlobalRecruitmentIntro() {
             className="display-2"
             style={{
               margin: 'var(--space-4) 0 var(--space-6)',
-              textTransform: 'uppercase'
+              textTransform: 'none'
             }}
           >
             Connecting People, Skills<br />
             <em>and Opportunity.</em>
           </h2>
           <p className="lead-text">
-            Vantara connects employers seeking reliable workforce solutions with individuals pursuing international career opportunities. Our approach focuses on professional candidate profiles, relevant skills, experience and employer-led selection.
+            Viaferra connects employers seeking reliable workforce solutions with individuals pursuing international career opportunities. Our approach focuses on professional candidate profiles, relevant skills, experience and employer-led selection.
           </p>
         </div>
 

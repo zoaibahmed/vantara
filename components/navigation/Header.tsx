@@ -23,9 +23,9 @@ export default function Header({ onOpenWorkerModal }: { onOpenWorkerModal?: () =
         <div className="header-container">
           <div className="header-masthead">
             <Brand />
-            <p className="header-descriptor">International people.<br />Exceptional hospitality.</p>
+            <p className="header-descriptor">Global recruitment.<br />International workforce solutions.</p>
             <div className="header-actions">
-              <button type="button" className="header-worker-link" onClick={onOpenWorkerModal}>Join Our Workforce</button>
+              <Link className="header-worker-link" href="/global-recruitment#cv-builder">Build Your CV</Link>
               <Link href="/contact" className="btn btn-primary btn-sm header-cta"><span>Request Workforce</span><span className="btn-arrow" aria-hidden="true">↗</span></Link>
               <button type="button" className="mobile-nav-toggle" onClick={() => setIsDrawerOpen(true)} aria-label="Open navigation menu" aria-expanded={isDrawerOpen} aria-controls="mobile-navigation">
                 <span>Menu</span><span className="hamburger-icon" aria-hidden="true"><span /><span /></span>

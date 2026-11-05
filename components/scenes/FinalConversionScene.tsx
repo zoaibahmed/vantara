@@ -45,7 +45,7 @@ export default function FinalConversionScene({ onOpenWorkerModal }: FinalConvers
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         >
           <span className="label-editorial">Start The Conversation</span>
-          <h2 className="display-1" style={{ margin: 'var(--space-2) 0 var(--space-3)', textTransform: 'uppercase' }}>
+          <h2 className="display-1" style={{ margin: 'var(--space-2) 0 var(--space-3)', textTransform: 'none' }}>
             Need People For<br />Your Operation?
           </h2>
           <p className="lead-text">

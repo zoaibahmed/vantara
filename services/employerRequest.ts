@@ -31,7 +31,7 @@ export async function submitEmployerRequest(enquiry: EmployerEnquiry): Promise<S
       message: data.message || (response.ok ? 'Your workforce requirement has been received.' : 'Failed to deliver request.')
     };
   } catch (error: any) {
-    console.error('[Vantara Service] Error submitting employer request:', error);
+    console.error('[Viaferra Service] Error submitting employer request:', error);
     return {
       success: false,
       message: 'Network error communicating with the server. Please email admin@britsync.co.uk directly.'
